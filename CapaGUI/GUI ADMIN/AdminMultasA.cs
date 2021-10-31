@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaGUI
+namespace CapaGUI.GUI_ADMIN
 {
-    public partial class Form1 : Form
+    public partial class AdminMultasA : Form
     {
-        public Form1()
+        public AdminMultasA()
         {
             InitializeComponent();
         }
