@@ -29,12 +29,201 @@ namespace CapaGUI.GUI_ADMIN
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.txtEdicion = new System.Windows.Forms.TextBox();
+            this.txtIdioma = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtAutor = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.btnBuscarLibro = new System.Windows.Forms.Button();
+            this.btnGuardarLibro = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo ISBN:";
+            // 
+            // txtISBN
+            // 
+            this.txtISBN.Location = new System.Drawing.Point(117, 28);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(100, 20);
+            this.txtISBN.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Titulo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Edicion:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(47, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Idioma:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(47, 177);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Stock:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 207);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Autor:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(47, 237);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Categoria:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(114, 79);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(100, 20);
+            this.txtTitulo.TabIndex = 8;
+            // 
+            // txtEdicion
+            // 
+            this.txtEdicion.Location = new System.Drawing.Point(114, 109);
+            this.txtEdicion.Name = "txtEdicion";
+            this.txtEdicion.Size = new System.Drawing.Size(100, 20);
+            this.txtEdicion.TabIndex = 9;
+            // 
+            // txtIdioma
+            // 
+            this.txtIdioma.Location = new System.Drawing.Point(114, 139);
+            this.txtIdioma.Name = "txtIdioma";
+            this.txtIdioma.Size = new System.Drawing.Size(100, 20);
+            this.txtIdioma.TabIndex = 10;
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(114, 169);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(100, 20);
+            this.txtStock.TabIndex = 11;
+            // 
+            // txtAutor
+            // 
+            this.txtAutor.Location = new System.Drawing.Point(114, 199);
+            this.txtAutor.Name = "txtAutor";
+            this.txtAutor.Size = new System.Drawing.Size(100, 20);
+            this.txtAutor.TabIndex = 12;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(114, 229);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
+            this.txtCategoria.TabIndex = 13;
+            // 
+            // btnBuscarLibro
+            // 
+            this.btnBuscarLibro.Location = new System.Drawing.Point(300, 24);
+            this.btnBuscarLibro.Name = "btnBuscarLibro";
+            this.btnBuscarLibro.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarLibro.TabIndex = 14;
+            this.btnBuscarLibro.Text = "Buscar Libro";
+            this.btnBuscarLibro.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardarLibro
+            // 
+            this.btnGuardarLibro.Location = new System.Drawing.Point(285, 148);
+            this.btnGuardarLibro.Name = "btnGuardarLibro";
+            this.btnGuardarLibro.Size = new System.Drawing.Size(90, 42);
+            this.btnGuardarLibro.TabIndex = 15;
+            this.btnGuardarLibro.Text = "Guardar Libro";
+            this.btnGuardarLibro.UseVisualStyleBackColor = true;
+            // 
+            // AdminLibrosA
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(427, 292);
+            this.Controls.Add(this.btnGuardarLibro);
+            this.Controls.Add(this.btnBuscarLibro);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.txtAutor);
+            this.Controls.Add(this.txtStock);
+            this.Controls.Add(this.txtIdioma);
+            this.Controls.Add(this.txtEdicion);
+            this.Controls.Add(this.txtTitulo);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtISBN);
+            this.Controls.Add(this.label1);
+            this.Name = "AdminLibrosA";
             this.Text = "AdminLibrosA";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtISBN;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.TextBox txtEdicion;
+        private System.Windows.Forms.TextBox txtIdioma;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtAutor;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.Button btnBuscarLibro;
+        private System.Windows.Forms.Button btnGuardarLibro;
     }
 }

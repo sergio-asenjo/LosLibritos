@@ -114,6 +114,27 @@
     <Compile Include="GUI CLIENTE\SolicitarLibrosC.Designer.cs">
       <DependentUpon>SolicitarLibrosC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI ADMIN\AdminLibrosA.resx">
+      <DependentUpon>AdminLibrosA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\AdminMultasA.resx">
+      <DependentUpon>AdminMultasA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\AdminSolicitudesA.resx">
+      <DependentUpon>AdminSolicitudesA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\SolicitarInformesA.resx">
+      <DependentUpon>SolicitarInformesA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI CLIENTE\AdminUsuarioC.resx">
+      <DependentUpon>AdminUsuarioC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI CLIENTE\ListaryFC.resx">
+      <DependentUpon>ListaryFC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI CLIENTE\SolicitarLibrosC.resx">
+      <DependentUpon>SolicitarLibrosC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

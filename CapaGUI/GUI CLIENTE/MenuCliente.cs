@@ -16,5 +16,23 @@ namespace CapaGUI
         {
             InitializeComponent();
         }
+
+        private void btnSolicitarL_Click(object sender, EventArgs e)
+        {
+            SolicitarLibrosC soli1 = new SolicitarLibrosC();
+            soli1.Show();
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            ListaryFC listar1 = new ListaryFC();
+            listar1.Show();
+        }
+
+        private void btnAdminUser_Click(object sender, EventArgs e)
+        {
+            AdminUsuarioC admin1 = new AdminUsuarioC();
+            admin1.Show();
+        }
     }
 }

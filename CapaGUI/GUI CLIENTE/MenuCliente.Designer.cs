@@ -43,6 +43,7 @@ namespace CapaGUI
             this.btnSolicitarL.TabIndex = 0;
             this.btnSolicitarL.Text = "Solicitar Libros";
             this.btnSolicitarL.UseVisualStyleBackColor = true;
+            this.btnSolicitarL.Click += new System.EventHandler(this.btnSolicitarL_Click);
             // 
             // btnListar
             // 
@@ -53,6 +54,7 @@ namespace CapaGUI
             this.btnListar.TabIndex = 1;
             this.btnListar.Text = "Lista de Libros";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnAdminUser
             // 
@@ -63,6 +65,7 @@ namespace CapaGUI
             this.btnAdminUser.TabIndex = 2;
             this.btnAdminUser.Text = "Administrar Usuario";
             this.btnAdminUser.UseVisualStyleBackColor = true;
+            this.btnAdminUser.Click += new System.EventHandler(this.btnAdminUser_Click);
             // 
             // MenuCliente
             // 

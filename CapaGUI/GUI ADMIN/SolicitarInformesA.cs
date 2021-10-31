@@ -16,5 +16,10 @@ namespace CapaGUI.GUI_ADMIN
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
