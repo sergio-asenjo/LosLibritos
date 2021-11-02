@@ -45,6 +45,7 @@ namespace CapaGUI.GUI_ADMIN
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.btnBuscarLibro = new System.Windows.Forms.Button();
             this.btnGuardarLibro = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -172,18 +173,28 @@ namespace CapaGUI.GUI_ADMIN
             // 
             // btnGuardarLibro
             // 
-            this.btnGuardarLibro.Location = new System.Drawing.Point(285, 148);
+            this.btnGuardarLibro.Location = new System.Drawing.Point(285, 97);
             this.btnGuardarLibro.Name = "btnGuardarLibro";
             this.btnGuardarLibro.Size = new System.Drawing.Size(90, 42);
             this.btnGuardarLibro.TabIndex = 15;
             this.btnGuardarLibro.Text = "Guardar Libro";
             this.btnGuardarLibro.UseVisualStyleBackColor = true;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(300, 199);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 21);
+            this.btnSalir.TabIndex = 16;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
             // AdminLibrosA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 292);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarLibro);
             this.Controls.Add(this.btnBuscarLibro);
             this.Controls.Add(this.txtCategoria);
@@ -201,7 +212,7 @@ namespace CapaGUI.GUI_ADMIN
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.label1);
             this.Name = "AdminLibrosA";
-            this.Text = "AdminLibrosA";
+            this.Text = "Administracion Libros";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +236,6 @@ namespace CapaGUI.GUI_ADMIN
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Button btnBuscarLibro;
         private System.Windows.Forms.Button btnGuardarLibro;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
