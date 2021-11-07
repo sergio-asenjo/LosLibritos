@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,20 +44,6 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
-      <Project>{6915bbf9-0b67-4eef-a855-a209f2204350}</Project>
-      <Name>CapaDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaGUI\CapaGUI.csproj">
-      <Project>{8a036959-698f-42da-bc49-2a34947e48ac}</Project>
-      <Name>CapaGUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{40ea3c32-3341-418f-980e-deaf032b5435}</Project>
-      <Name>CapaNegocio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
