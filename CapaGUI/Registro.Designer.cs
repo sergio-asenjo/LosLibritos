@@ -44,7 +44,6 @@ namespace CapaGUI
             this.txtAPaterno = new System.Windows.Forms.TextBox();
             this.txtAMaterno = new System.Windows.Forms.TextBox();
             this.txtRut = new System.Windows.Forms.TextBox();
-            this.txtNacimiento = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@ namespace CapaGUI
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -157,78 +157,81 @@ namespace CapaGUI
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(146, 25);
+            this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(134, 20);
             this.txtNombre.TabIndex = 11;
             // 
             // txtAPaterno
             // 
             this.txtAPaterno.Location = new System.Drawing.Point(146, 58);
+            this.txtAPaterno.MaxLength = 40;
             this.txtAPaterno.Name = "txtAPaterno";
-            this.txtAPaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtAPaterno.Size = new System.Drawing.Size(134, 20);
             this.txtAPaterno.TabIndex = 12;
             // 
             // txtAMaterno
             // 
             this.txtAMaterno.Location = new System.Drawing.Point(146, 91);
+            this.txtAMaterno.MaxLength = 40;
             this.txtAMaterno.Name = "txtAMaterno";
-            this.txtAMaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtAMaterno.Size = new System.Drawing.Size(134, 20);
             this.txtAMaterno.TabIndex = 13;
             // 
             // txtRut
             // 
             this.txtRut.Location = new System.Drawing.Point(146, 124);
+            this.txtRut.MaxLength = 15;
             this.txtRut.Name = "txtRut";
-            this.txtRut.Size = new System.Drawing.Size(100, 20);
+            this.txtRut.Size = new System.Drawing.Size(134, 20);
             this.txtRut.TabIndex = 14;
-            // 
-            // txtNacimiento
-            // 
-            this.txtNacimiento.Location = new System.Drawing.Point(146, 157);
-            this.txtNacimiento.Name = "txtNacimiento";
-            this.txtNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.txtNacimiento.TabIndex = 15;
             // 
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(146, 190);
+            this.txtUser.MaxLength = 40;
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.Size = new System.Drawing.Size(134, 20);
             this.txtUser.TabIndex = 16;
             // 
             // txtContra
             // 
             this.txtContra.Location = new System.Drawing.Point(146, 223);
+            this.txtContra.MaxLength = 40;
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(100, 20);
+            this.txtContra.Size = new System.Drawing.Size(134, 20);
             this.txtContra.TabIndex = 17;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(146, 256);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(134, 20);
             this.txtEmail.TabIndex = 18;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(146, 289);
+            this.txtDireccion.MaxLength = 50;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(134, 20);
             this.txtDireccion.TabIndex = 19;
             // 
             // txtCiudad
             // 
             this.txtCiudad.Location = new System.Drawing.Point(146, 322);
+            this.txtCiudad.MaxLength = 50;
             this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(100, 20);
+            this.txtCiudad.Size = new System.Drawing.Size(134, 20);
             this.txtCiudad.TabIndex = 20;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(146, 355);
+            this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(134, 20);
             this.txtTelefono.TabIndex = 21;
             // 
             // btnRegistrar
@@ -241,11 +244,20 @@ namespace CapaGUI
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
+            // dateFechaNacimiento
+            // 
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(146, 164);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(134, 20);
+            this.dateFechaNacimiento.TabIndex = 23;
+            this.dateFechaNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 450);
+            this.Controls.Add(this.dateFechaNacimiento);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtCiudad);
@@ -253,7 +265,6 @@ namespace CapaGUI
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtNacimiento);
             this.Controls.Add(this.txtRut);
             this.Controls.Add(this.txtAMaterno);
             this.Controls.Add(this.txtAPaterno);
@@ -293,7 +304,6 @@ namespace CapaGUI
         private System.Windows.Forms.TextBox txtAPaterno;
         private System.Windows.Forms.TextBox txtAMaterno;
         private System.Windows.Forms.TextBox txtRut;
-        private System.Windows.Forms.TextBox txtNacimiento;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.TextBox txtEmail;
@@ -301,5 +311,6 @@ namespace CapaGUI
         private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
     }
 }
