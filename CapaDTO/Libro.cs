@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CapaDTO
+﻿namespace CapaDTO
 {
     public class Libro
     {
@@ -15,8 +9,21 @@ namespace CapaDTO
         private string idioma;
         private string isbn;
         private int stock;
-        private int id_autor;
-        private int id_categoria;
+        private string nombre_autor;
+        private string nombre_categoria;
+
+        public Libro(int id_libro, string titulo, string descripcion, string edicion, string idioma, string isbn, int stock, string nombre_autor, string nombre_categoria)
+        {
+            this.id_libro = id_libro;
+            this.titulo = titulo;
+            this.descripcion = descripcion;
+            this.edicion = edicion;
+            this.idioma = idioma;
+            this.isbn = isbn;
+            this.stock = stock;
+            this.nombre_autor = nombre_autor;
+            this.nombre_categoria = nombre_categoria;
+        }
 
         public int Id_libro { get => id_libro; set => id_libro = value; }
         public string Titulo { get => titulo; set => titulo = value; }
@@ -25,7 +32,7 @@ namespace CapaDTO
         public string Idioma { get => idioma; set => idioma = value; }
         public string Isbn { get => isbn; set => isbn = value; }
         public int Stock { get => stock; set => stock = value; }
-        public int Id_autor { get => id_autor; set => id_autor = value; }
-        public int Id_categoria { get => id_categoria; set => id_categoria = value; }
+        public string Nombre_autor { get => nombre_autor; set => nombre_autor = value; }
+        public string Nombre_categoria { get => nombre_categoria; set => nombre_categoria = value; }
     }
 }
