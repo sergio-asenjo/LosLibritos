@@ -1,4 +1,5 @@
-﻿using CapaDTO;
+﻿using CapaConexion;
+using CapaDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace CapaNegocio
     public class Negocio
     {
         private Conexion conec1;
+
         public Conexion Conec1 { get => conec1; set => conec1 = value; }
+
         public void configurarConexion()
         {
             this.Conec1 = new Conexion();

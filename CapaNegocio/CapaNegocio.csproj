@@ -45,13 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
-      <Project>{6915bbf9-0b67-4eef-a855-a209f2204350}</Project>
-      <Name>CapaDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaGUI\CapaGUI.csproj">
-      <Project>{8a036959-698f-42da-bc49-2a34947e48ac}</Project>
-      <Name>CapaGUI</Name>
+    <ProjectReference Include="..\CapaConexion\CapaConexion.csproj">
+      <Project>{e689e527-e2ec-47ce-8cb1-2d66dcf475e1}</Project>
+      <Name>CapaConexion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

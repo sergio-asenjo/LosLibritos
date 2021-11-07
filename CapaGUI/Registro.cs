@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +25,34 @@ namespace CapaGUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Dispose();
-            GC.Collect();
+            try
+            {
+                Usuario auxusuario = new Usuario();
+
+                auxusuario.Nombre = txtNombre.Text;
+                auxusuario.Apaterno = txtAPaterno.Text;
+                auxusuario.Amaterno = txtAMaterno.Text;
+                auxusuario.Rut = txtRut.Text;
+                auxusuario.Fecha_nacimiento = dateFechaNacimiento.Text;
+                auxusuario.Username = txtUser.Text;
+                auxusuario.Contrasena = txtContra.Text;
+                auxusuario.Email = txtEmail.Text;
+                auxusuario.Direccion = txtDireccion.Text;
+                auxusuario.Ciudad = txtCiudad.Text;
+                auxusuario.Numero_telefono = txtTelefono.Text;
+            }
+
+            catch (Exception ex)
+            {
+
+            }
             
+            
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

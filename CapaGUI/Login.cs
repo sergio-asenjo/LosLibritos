@@ -28,5 +28,10 @@ namespace CapaGUI
             reg1.Show();
             
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
