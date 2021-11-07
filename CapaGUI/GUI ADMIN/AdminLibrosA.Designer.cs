@@ -41,17 +41,18 @@ namespace CapaGUI.GUI_ADMIN
             this.txtEdicion = new System.Windows.Forms.TextBox();
             this.txtIdioma = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtAutor = new System.Windows.Forms.TextBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.btnBuscarLibro = new System.Windows.Forms.Button();
             this.btnGuardarLibro = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.comboAutor = new System.Windows.Forms.ComboBox();
+            this.comboCategoria = new System.Windows.Forms.ComboBox();
+            this.btnAutor = new System.Windows.Forms.Button();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
@@ -59,15 +60,15 @@ namespace CapaGUI.GUI_ADMIN
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(117, 28);
+            this.txtISBN.Location = new System.Drawing.Point(108, 17);
             this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(100, 20);
+            this.txtISBN.Size = new System.Drawing.Size(116, 20);
             this.txtISBN.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 87);
+            this.label2.Location = new System.Drawing.Point(12, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 2;
@@ -76,7 +77,7 @@ namespace CapaGUI.GUI_ADMIN
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 117);
+            this.label3.Location = new System.Drawing.Point(12, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace CapaGUI.GUI_ADMIN
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 147);
+            this.label4.Location = new System.Drawing.Point(12, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 4;
@@ -95,7 +96,7 @@ namespace CapaGUI.GUI_ADMIN
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 177);
+            this.label5.Location = new System.Drawing.Point(12, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 5;
@@ -104,7 +105,7 @@ namespace CapaGUI.GUI_ADMIN
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 207);
+            this.label6.Location = new System.Drawing.Point(12, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 6;
@@ -113,7 +114,7 @@ namespace CapaGUI.GUI_ADMIN
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(47, 237);
+            this.label7.Location = new System.Drawing.Point(12, 198);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 7;
@@ -122,83 +123,98 @@ namespace CapaGUI.GUI_ADMIN
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(114, 79);
+            this.txtTitulo.Location = new System.Drawing.Point(108, 46);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(100, 20);
+            this.txtTitulo.Size = new System.Drawing.Size(116, 20);
             this.txtTitulo.TabIndex = 8;
             // 
             // txtEdicion
             // 
-            this.txtEdicion.Location = new System.Drawing.Point(114, 109);
+            this.txtEdicion.Location = new System.Drawing.Point(108, 75);
             this.txtEdicion.Name = "txtEdicion";
-            this.txtEdicion.Size = new System.Drawing.Size(100, 20);
+            this.txtEdicion.Size = new System.Drawing.Size(116, 20);
             this.txtEdicion.TabIndex = 9;
             // 
             // txtIdioma
             // 
-            this.txtIdioma.Location = new System.Drawing.Point(114, 139);
+            this.txtIdioma.Location = new System.Drawing.Point(108, 104);
             this.txtIdioma.Name = "txtIdioma";
-            this.txtIdioma.Size = new System.Drawing.Size(100, 20);
+            this.txtIdioma.Size = new System.Drawing.Size(116, 20);
             this.txtIdioma.TabIndex = 10;
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(114, 169);
+            this.txtStock.Location = new System.Drawing.Point(108, 133);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 20);
+            this.txtStock.Size = new System.Drawing.Size(116, 20);
             this.txtStock.TabIndex = 11;
-            // 
-            // txtAutor
-            // 
-            this.txtAutor.Location = new System.Drawing.Point(114, 199);
-            this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(100, 20);
-            this.txtAutor.TabIndex = 12;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(114, 229);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
-            this.txtCategoria.TabIndex = 13;
-            // 
-            // btnBuscarLibro
-            // 
-            this.btnBuscarLibro.Location = new System.Drawing.Point(300, 24);
-            this.btnBuscarLibro.Name = "btnBuscarLibro";
-            this.btnBuscarLibro.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarLibro.TabIndex = 14;
-            this.btnBuscarLibro.Text = "Buscar Libro";
-            this.btnBuscarLibro.UseVisualStyleBackColor = true;
             // 
             // btnGuardarLibro
             // 
-            this.btnGuardarLibro.Location = new System.Drawing.Point(285, 97);
+            this.btnGuardarLibro.Location = new System.Drawing.Point(296, 150);
             this.btnGuardarLibro.Name = "btnGuardarLibro";
-            this.btnGuardarLibro.Size = new System.Drawing.Size(90, 42);
+            this.btnGuardarLibro.Size = new System.Drawing.Size(105, 32);
             this.btnGuardarLibro.TabIndex = 15;
             this.btnGuardarLibro.Text = "Guardar Libro";
             this.btnGuardarLibro.UseVisualStyleBackColor = true;
+            this.btnGuardarLibro.Click += new System.EventHandler(this.btnGuardarLibro_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(300, 199);
+            this.btnSalir.Location = new System.Drawing.Point(160, 226);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 21);
+            this.btnSalir.Size = new System.Drawing.Size(85, 21);
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // comboAutor
+            // 
+            this.comboAutor.FormattingEnabled = true;
+            this.comboAutor.Location = new System.Drawing.Point(108, 161);
+            this.comboAutor.Name = "comboAutor";
+            this.comboAutor.Size = new System.Drawing.Size(137, 21);
+            this.comboAutor.TabIndex = 17;
+            // 
+            // comboCategoria
+            // 
+            this.comboCategoria.FormattingEnabled = true;
+            this.comboCategoria.Location = new System.Drawing.Point(108, 190);
+            this.comboCategoria.Name = "comboCategoria";
+            this.comboCategoria.Size = new System.Drawing.Size(137, 21);
+            this.comboCategoria.TabIndex = 18;
+            // 
+            // btnAutor
+            // 
+            this.btnAutor.Location = new System.Drawing.Point(296, 104);
+            this.btnAutor.Name = "btnAutor";
+            this.btnAutor.Size = new System.Drawing.Size(105, 23);
+            this.btnAutor.TabIndex = 19;
+            this.btnAutor.Text = "Agregar Autor";
+            this.btnAutor.UseVisualStyleBackColor = true;
+            this.btnAutor.Click += new System.EventHandler(this.btnAutor_Click);
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.Location = new System.Drawing.Point(296, 62);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(105, 23);
+            this.btnCategoria.TabIndex = 20;
+            this.btnCategoria.Text = "Agregar Categoria";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // AdminLibrosA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 292);
+            this.ClientSize = new System.Drawing.Size(427, 263);
+            this.Controls.Add(this.btnCategoria);
+            this.Controls.Add(this.btnAutor);
+            this.Controls.Add(this.comboCategoria);
+            this.Controls.Add(this.comboAutor);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarLibro);
-            this.Controls.Add(this.btnBuscarLibro);
-            this.Controls.Add(this.txtCategoria);
-            this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtIdioma);
             this.Controls.Add(this.txtEdicion);
@@ -232,10 +248,11 @@ namespace CapaGUI.GUI_ADMIN
         private System.Windows.Forms.TextBox txtEdicion;
         private System.Windows.Forms.TextBox txtIdioma;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.TextBox txtAutor;
-        private System.Windows.Forms.TextBox txtCategoria;
-        private System.Windows.Forms.Button btnBuscarLibro;
         private System.Windows.Forms.Button btnGuardarLibro;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox comboAutor;
+        private System.Windows.Forms.ComboBox comboCategoria;
+        private System.Windows.Forms.Button btnAutor;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }

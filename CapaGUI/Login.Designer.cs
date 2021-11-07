@@ -46,6 +46,7 @@ namespace CapaGUI
             this.btnIniciarS.TabIndex = 0;
             this.btnIniciarS.Text = "Iniciar Sesion";
             this.btnIniciarS.UseVisualStyleBackColor = true;
+            this.btnIniciarS.Click += new System.EventHandler(this.btnIniciarS_Click);
             // 
             // label1
             // 

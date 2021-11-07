@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaGUI.GUI_ADMIN.GUI_LIBROS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,33 @@ namespace CapaGUI.GUI_ADMIN
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardarLibro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Datos Erroneos. " + ex.Message, "Mensaje de sistema");
+            }
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            AgregarCategoria cate1 = new AgregarCategoria();
+
+            cate1.ShowDialog();
+
+        }
+
+        private void btnAutor_Click(object sender, EventArgs e)
+        {
+            AgregarAutor autor1 = new AgregarAutor();
+
+            autor1.ShowDialog();
         }
     }
 }

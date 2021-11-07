@@ -33,5 +33,10 @@ namespace CapaGUI
         {
 
         }
+
+        private void btnIniciarS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

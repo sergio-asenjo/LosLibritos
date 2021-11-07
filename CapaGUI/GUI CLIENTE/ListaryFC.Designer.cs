@@ -31,7 +31,7 @@ namespace CapaGUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -53,14 +53,15 @@ namespace CapaGUI
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // btnFiltrar
             // 
-            this.button1.Location = new System.Drawing.Point(267, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Filtrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Location = new System.Drawing.Point(267, 27);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 2;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -86,7 +87,7 @@ namespace CapaGUI
             this.ClientSize = new System.Drawing.Size(483, 292);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "ListaryFC";
@@ -101,7 +102,7 @@ namespace CapaGUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSalir;
     }

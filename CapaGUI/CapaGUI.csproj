@@ -64,6 +64,18 @@
     <Compile Include="GUI ADMIN\AdminSolicitudesA.Designer.cs">
       <DependentUpon>AdminSolicitudesA.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI ADMIN\GUI LIBROS\AgregarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI ADMIN\GUI LIBROS\AgregarAutor.Designer.cs">
+      <DependentUpon>AgregarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI ADMIN\GUI LIBROS\AgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI ADMIN\GUI LIBROS\AgregarCategoria.Designer.cs">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI ADMIN\SolicitarInformesA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI ADMIN\AdminSolicitudesA.resx">
       <DependentUpon>AdminSolicitudesA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\GUI LIBROS\AgregarAutor.resx">
+      <DependentUpon>AgregarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\GUI LIBROS\AgregarCategoria.resx">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI ADMIN\SolicitarInformesA.resx">
       <DependentUpon>SolicitarInformesA.cs</DependentUpon>

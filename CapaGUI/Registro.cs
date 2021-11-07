@@ -27,28 +27,76 @@ namespace CapaGUI
         {
             try
             {
-                Usuario auxusuario = new Usuario();
+                if (txtNombre.TextLength == 0)
+                {
+                    MessageBox.Show("Nombre Vacio", "Error de Sistema");
+                }
+                else if (txtAPaterno.TextLength == 0)
+                {
+                    MessageBox.Show("Apellido Paterno Vacio", "Error de Sistema");
+                }
+                else if (txtAMaterno.TextLength == 0)
+                {
+                    MessageBox.Show("Apellido Materno Vacio", "Error de Sistema");
+                }
+                else if (txtRut.TextLength == 0)
+                {
+                    MessageBox.Show("Rut Vacio", "Error de Sistema");
+                }
+                else if (txtUser.TextLength == 0)
+                {
+                    MessageBox.Show("Usuario Vacio", "Error de Sistema");
+                }
+                else if (txtContra.TextLength == 0)
+                {
+                    MessageBox.Show("Contraseña Vacia", "Error de Sistema");
+                }
+                else if (txtEmail.TextLength == 0)
+                {
+                    MessageBox.Show("Correo Vacio", "Error de Sistema");
+                }
+                else if (txtDireccion.TextLength == 0)
+                {
+                    MessageBox.Show("Direccion Vacia", "Error de Sistema");
+                }
+                else if (txtCiudad.TextLength == 0)
+                {
+                    MessageBox.Show("Ciudad en Blanco", "Error de Sistema");
+                }
+                else if (txtTelefono.TextLength < 9)
+                {
+                    MessageBox.Show("Telefono tiene que contener 9 digitos ", "Error de Sistema");
+                }
+                else
+                {
+                    Cliente auxcliente = new Cliente();
 
-                auxusuario.Nombre = txtNombre.Text;
-                auxusuario.Apaterno = txtAPaterno.Text;
-                auxusuario.Amaterno = txtAMaterno.Text;
-                auxusuario.Rut = txtRut.Text;
-                auxusuario.Fecha_nacimiento = dateFechaNacimiento.Text;
-                auxusuario.Username = txtUser.Text;
-                auxusuario.Contrasena = txtContra.Text;
-                auxusuario.Email = txtEmail.Text;
-                auxusuario.Direccion = txtDireccion.Text;
-                auxusuario.Ciudad = txtCiudad.Text;
-                auxusuario.Numero_telefono = txtTelefono.Text;
+                    auxcliente.Nombre = txtNombre.Text;
+                    auxcliente.Apaterno = txtAPaterno.Text;
+                    auxcliente.Amaterno = txtAMaterno.Text;
+                    auxcliente.Rut = txtRut.Text;
+                    auxcliente.Fecha_nacimiento = dateFechaNacimiento.Text;
+                    auxcliente.Username = txtUser.Text;
+                    auxcliente.Contrasena = txtContra.Text;
+                    auxcliente.Email = txtEmail.Text;
+                    auxcliente.Direccion = txtDireccion.Text;
+                    auxcliente.Ciudad = txtCiudad.Text;
+                    auxcliente.Numero_telefono = int.Parse(txtTelefono.Text);
+                    auxcliente.Cant_prestamos = 0;
+                    auxcliente.Multa_vigente = false;
+                    auxcliente.Miembro = true;
+
+
+
+                    Dispose();
+                    GC.Collect();
+                }
             }
 
             catch (Exception ex)
             {
-
+                MessageBox.Show("Datos Erroneos. " + ex.Message, "Mensaje de sistema");
             }
-            
-            
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
