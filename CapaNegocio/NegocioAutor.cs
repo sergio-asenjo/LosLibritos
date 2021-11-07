@@ -10,7 +10,7 @@ namespace CapaNegocio
         public void AnadirAutor(Autor autor)
         {
             ConfigurarConexion("autor");
-            Conec1.CadenaSQL = $"INSERT INTO {Conec1.NombreTabla} (id_autor, nombre) VALUES ({autor.Id_autor},'{autor.Nombre}');";
+            Conec1.CadenaSQL = $"INSERT INTO {Conec1.NombreTabla} (nombre) VALUES ('{autor.Nombre}');";
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
