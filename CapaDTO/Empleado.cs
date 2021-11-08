@@ -2,7 +2,6 @@
 {
     public class Empleado : Usuario
     {
-
         private string fecha_ingreso;
         private string tipo_empleado;
         private bool estado;

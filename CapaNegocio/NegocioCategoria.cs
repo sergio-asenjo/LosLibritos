@@ -2,7 +2,7 @@
 
 namespace CapaNegocio
 {
-    class NegocioCategoria : Negocio
+    public class NegocioCategoria : Negocio
     {
         // Hereda de "Negocio", por lo que ya tiene el atributo Conec1 y el método ConfigurarConexión.
 

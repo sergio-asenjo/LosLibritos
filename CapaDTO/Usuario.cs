@@ -1,21 +1,19 @@
-﻿using System;
-
-namespace CapaDTO
+﻿namespace CapaDTO
 {
     public class Usuario
     {
-        protected String nombre;
-        protected String apaterno;
-        protected String amaterno;
-        protected String rut;
-        protected String fecha_nacimiento;
-        protected String username;
-        protected String contrasena;
-        protected String email;
-        protected String direccion;
-        protected String ciudad;
+        protected string nombre;
+        protected string apaterno;
+        protected string amaterno;
+        protected string rut;
+        protected string fecha_nacimiento;
+        protected string username;
+        protected string contrasena;
+        protected string email;
+        protected string direccion;
+        protected string ciudad;
         protected int numero_telefono;
-        protected String fecha_creacion;
+        protected string fecha_creacion;
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apaterno { get => apaterno; set => apaterno = value; }
