@@ -36,7 +36,8 @@ namespace CapaGUI
 
         private void btnIniciarS_Click(object sender, EventArgs e)
         {
-
+            MenuAdmin menu1 = new MenuAdmin();
+            menu1.ShowDialog();
         }
     }
 }

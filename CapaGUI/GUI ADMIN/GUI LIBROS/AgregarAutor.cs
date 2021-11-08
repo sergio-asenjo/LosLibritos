@@ -1,4 +1,5 @@
-﻿using CapaDTO;
+﻿using CapaNegocio;
+using CapaDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,9 +30,10 @@ namespace CapaGUI.GUI_ADMIN.GUI_LIBROS
                 else
                 {
                     Autor auxAutor = new Autor();
-
                     auxAutor.Nombre = txtAutor.Text;
 
+                    NegocioAutor auxNegocioAutor = new NegocioAutor();
+                    auxNegocioAutor.AnadirAutor(auxAutor);
 
                 }
             }

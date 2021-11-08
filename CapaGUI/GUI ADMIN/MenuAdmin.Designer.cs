@@ -64,6 +64,7 @@ namespace CapaGUI
             this.btnAdminLibros.TabIndex = 3;
             this.btnAdminLibros.Text = "Administrar Libros";
             this.btnAdminLibros.UseVisualStyleBackColor = true;
+            this.btnAdminLibros.Click += new System.EventHandler(this.btnAdminLibros_Click);
             // 
             // btnInformes
             // 
