@@ -195,7 +195,12 @@ namespace CapaConexion
             Conexion conec1 = new Conexion();
             conec1.NombreBaseDeDatos = "prueba";
             conec1.NombreTabla = "cliente";
-            conec1.CadenaConexion = "Data Source=localhost;Initial Catalog=prueba;Integrated Security=True";
+            //conec1.CadenaConexion = "Data Source=localhost;Initial Catalog=prueba;Integrated Security=True";
+            conec1.CadenaConexion = $"Data Source = {Environment.GetEnvironmentVariable("DB_HOST")}; " +
+                                 $"Network Library = DBMSSOCN; " +
+                                 $"Initial Catalog = {conec1.NombreBaseDeDatos}; " +
+                                 $"User ID = {Environment.GetEnvironmentVariable("DB_USER")}; " +
+                                 $"Password = {Environment.GetEnvironmentVariable("DB_PASS")}";
             conec1.CadenaSQL = "select * from cliente";
             conec1.EsSelect = true;
             conec1.conectar();
