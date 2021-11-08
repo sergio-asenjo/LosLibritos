@@ -1,4 +1,5 @@
-﻿using CapaConexion;
+﻿using System;
+using CapaConexion;
 
 namespace CapaNegocio
 {
@@ -10,12 +11,14 @@ namespace CapaNegocio
 
         public void ConfigurarConexion(string nombreTabla)
         {
-            this.Conec1 = new Conexion
-            {
-                NombreBaseDeDatos = "loslibritos",
-                NombreTabla = nombreTabla,
-                CadenaConexion = "Data Source=localhost;Initial Catalog=loslibritos;Integrated Security=True"
-            };
+            Conec1 = new Conexion();
+            Conec1.NombreBaseDeDatos = "loslibritos";
+            Conec1.NombreTabla = nombreTabla;
+            Conec1.CadenaConexion = $"Data Source = {Environment.GetEnvironmentVariable("DB_HOST")}; " +
+                                    $"Network Library = DBMSSOCN; " +
+                                    $"Initial Catalog = {Conec1.NombreBaseDeDatos}; " +
+                                    $"User ID = {Environment.GetEnvironmentVariable("DB_USER")}; " +
+                                    $"Password = {Environment.GetEnvironmentVariable("DB_PASS")}";
         }
     }
 }
