@@ -3,7 +3,7 @@ using CapaConexion;
 
 namespace CapaNegocio
 {
-    class Negocio
+    public class Negocio
     {
         protected Conexion conec1;
 
