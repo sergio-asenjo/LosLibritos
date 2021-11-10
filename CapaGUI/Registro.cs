@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace CapaGUI
 {
     public partial class Registro : Form
     {
+        
         public Registro()
         {
             InitializeComponent();
@@ -69,6 +71,7 @@ namespace CapaGUI
                 }
                 else
                 {
+                    
                     Cliente auxcliente = new Cliente();
 
                     auxcliente.Nombre = txtNombre.Text;
@@ -86,7 +89,10 @@ namespace CapaGUI
                     auxcliente.Multa_vigente = false;
                     auxcliente.Miembro = true;
 
+                    NegocioCliente auxNegocioCliente = new NegocioCliente();
+                    auxNegocioCliente.AnadirCliente(auxcliente);
 
+                    MessageBox.Show("Usuario Registrado", "Confirmacion de Sistema");
 
                     Dispose();
                     GC.Collect();
@@ -102,6 +108,12 @@ namespace CapaGUI
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+            dateFechaNacimiento.Format = DateTimePickerFormat.Custom;
+            dateFechaNacimiento.CustomFormat = "yyyy-MM-dd";
         }
     }
 }

@@ -54,5 +54,10 @@ namespace CapaGUI.GUI_ADMIN
 
             autor1.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CapaNegocio
 {
-    class NegocioCliente : Negocio
+    public class NegocioCliente : Negocio
     {
         public void AnadirCliente(Cliente cliente)
         {

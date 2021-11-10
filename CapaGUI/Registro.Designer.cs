@@ -247,6 +247,8 @@ namespace CapaGUI
             // dateFechaNacimiento
             // 
             this.dateFechaNacimiento.Location = new System.Drawing.Point(146, 164);
+            this.dateFechaNacimiento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateFechaNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Size = new System.Drawing.Size(134, 20);
             this.dateFechaNacimiento.TabIndex = 23;
@@ -282,6 +284,7 @@ namespace CapaGUI
             this.Controls.Add(this.label1);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

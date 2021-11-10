@@ -44,6 +44,7 @@ namespace CapaGUI
             this.btnAdminMultas.TabIndex = 5;
             this.btnAdminMultas.Text = "Administrar Multas";
             this.btnAdminMultas.UseVisualStyleBackColor = true;
+            this.btnAdminMultas.Click += new System.EventHandler(this.btnAdminMultas_Click);
             // 
             // btnAdminSoli
             // 
@@ -54,6 +55,7 @@ namespace CapaGUI
             this.btnAdminSoli.TabIndex = 4;
             this.btnAdminSoli.Text = "Administrar Solicitudes";
             this.btnAdminSoli.UseVisualStyleBackColor = true;
+            this.btnAdminSoli.Click += new System.EventHandler(this.btnAdminSoli_Click);
             // 
             // btnAdminLibros
             // 
@@ -75,6 +77,7 @@ namespace CapaGUI
             this.btnInformes.TabIndex = 6;
             this.btnInformes.Text = "Solicitar Informes";
             this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // MenuAdmin
             // 
@@ -86,7 +89,7 @@ namespace CapaGUI
             this.Controls.Add(this.btnAdminSoli);
             this.Controls.Add(this.btnAdminLibros);
             this.Name = "MenuAdmin";
-            this.Text = "MenuAdmin";
+            this.Text = "Menu Administración";
             this.ResumeLayout(false);
 
         }
