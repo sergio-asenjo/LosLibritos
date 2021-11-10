@@ -51,6 +51,8 @@
     <Compile Include="NegocioCliente.cs" />
     <Compile Include="NegocioEmpleado.cs" />
     <Compile Include="NegocioLibro.cs" />
+    <Compile Include="NegocioMulta.cs" />
+    <Compile Include="NegocioPrestamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
