@@ -12,9 +12,9 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
             ConfigurarConexion("Usuario");
-            Conec1.CadenaSQL = $"INSTERT INTO {Conec1.NombreTabla} (nombre, apellido_paterno, apellido_materno, rut, fecha_nacimiento, usuario, contrasena, email, direccion, ciudad, numero_telefono, fecha_creacion, id_cliente) VALUES " +
+            Conec1.CadenaSQL = $"INSERT INTO {Conec1.NombreTabla} (nombre, apellido_paterno, apellido_materno, rut, fecha_nacimiento, usuario, contrasena, email, direccion, ciudad, numero_telefono, fecha_creacion, id_cliente) VALUES " +
                                $"('{cliente.Nombre}','{cliente.Apaterno}','{cliente.Amaterno}','{cliente.Rut}','{cliente.Fecha_nacimiento}','{cliente.Username}','{cliente.Contrasena}','{cliente.Email}','{cliente.Direccion}','{cliente.Ciudad}',{cliente.Numero_telefono},'{cliente.Fecha_creacion}', " +
-                               $"(SELECT TOP 1 * FROM Cliente ORDER BY ID DESC) );";
+                               $"(SELECT IDENT_CURRENT('Cliente')) );";
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
