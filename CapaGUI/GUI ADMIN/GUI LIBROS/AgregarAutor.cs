@@ -35,6 +35,8 @@ namespace CapaGUI.GUI_ADMIN.GUI_LIBROS
                     NegocioAutor auxNegocioAutor = new NegocioAutor();
                     auxNegocioAutor.AnadirAutor(auxAutor);
 
+                    MessageBox.Show("Autor Agregado!", "Confirmacion de Sistema");
+
                 }
             }
             catch(Exception ex)

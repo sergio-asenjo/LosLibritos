@@ -9,8 +9,8 @@ namespace CapaNegocio
         public void AnadirCategoria(Categoria categoria)
         {
             ConfigurarConexion("categoria");
-            Conec1.CadenaSQL = $"INSERT INTO {Conec1.NombreTabla} (id_categoria, nombre_genero, descripcion) VALUES" +
-                               $"({categoria.Id_categoria},'{categoria.Nombre_genero}','{categoria.Descripcion}');";
+            Conec1.CadenaSQL = $"INSERT INTO {Conec1.NombreTabla} (nombre_genero, descripcion) VALUES" +
+                               $"('{categoria.Nombre_genero}','{categoria.Descripcion}');";
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
