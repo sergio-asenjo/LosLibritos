@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -17,6 +18,24 @@ namespace CapaNegocio
                                $"(SELECT IDENT_CURRENT('Cliente')) );";
             Conec1.EsSelect = false;
             Conec1.conectar();
+        }
+
+        public DataSet mostrarDatosCliente(string rut)
+        {
+            ConfigurarConexion("Usuario");
+            Conec1.CadenaSQL = $"SELECT * FROM  {Conec1.NombreTabla} WHERE rut='{rut}'";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public DataSet iniciarSesionCliente(string usuario)
+        {
+            ConfigurarConexion("Usuario");
+            Conec1.CadenaSQL = $"SELECT * FROM  {Conec1.NombreTabla} WHERE usuario='{usuario}'";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
         }
     }
 }

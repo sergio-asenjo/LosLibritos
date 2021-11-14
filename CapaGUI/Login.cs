@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,22 @@ namespace CapaGUI
 
         private void btnIniciarS_Click(object sender, EventArgs e)
         {
+            try
+            {
+                NegocioCliente auxNegocioCliente = new NegocioCliente();
+                string usuario = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["usuario"].ToString();
+                string contra = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["contrasena"].ToString();
+
+                if (usuario == txtUsuario.Text && contra == txtContra.Text)
+                {
+
+                }
+            }
+
+            catch(Exception ex)
+            {
+
+            }
             MenuAdmin menu1 = new MenuAdmin();
             menu1.ShowDialog();
         }
