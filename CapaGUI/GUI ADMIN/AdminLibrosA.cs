@@ -1,4 +1,5 @@
 ﻿using CapaGUI.GUI_ADMIN.GUI_LIBROS;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,6 +59,16 @@ namespace CapaGUI.GUI_ADMIN
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void AdminLibrosA_Load(object sender, EventArgs e)
+        {
+            NegocioAutor auxAutor = new NegocioAutor();
+            dataGrid1.DataSource = auxAutor.mostrarListado();
+            dataGrid1.DataMember = "Autor";
+
+            
+
         }
     }
 }

@@ -47,6 +47,8 @@ namespace CapaGUI.GUI_ADMIN
             this.comboCategoria = new System.Windows.Forms.ComboBox();
             this.btnAutor = new System.Windows.Forms.Button();
             this.btnCategoria = new System.Windows.Forms.Button();
+            this.dataGrid1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -205,11 +207,20 @@ namespace CapaGUI.GUI_ADMIN
             this.btnCategoria.UseVisualStyleBackColor = true;
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
+            // dataGrid1
+            // 
+            this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid1.Location = new System.Drawing.Point(482, 46);
+            this.dataGrid1.Name = "dataGrid1";
+            this.dataGrid1.Size = new System.Drawing.Size(240, 150);
+            this.dataGrid1.TabIndex = 21;
+            // 
             // AdminLibrosA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 263);
+            this.ClientSize = new System.Drawing.Size(944, 278);
+            this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnAutor);
             this.Controls.Add(this.comboCategoria);
@@ -230,6 +241,8 @@ namespace CapaGUI.GUI_ADMIN
             this.Controls.Add(this.label1);
             this.Name = "AdminLibrosA";
             this.Text = "Administracion Libros";
+            this.Load += new System.EventHandler(this.AdminLibrosA_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +268,6 @@ namespace CapaGUI.GUI_ADMIN
         private System.Windows.Forms.ComboBox comboCategoria;
         private System.Windows.Forms.Button btnAutor;
         private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.DataGridView dataGrid1;
     }
 }

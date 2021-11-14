@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using System.Collections.Generic;
 
 namespace CapaNegocio
 {
