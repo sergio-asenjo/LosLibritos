@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -15,6 +16,14 @@ namespace CapaNegocio
                                $"(SELECT id_libro FROM Libro WHERE titulo = '{titulo}') , null);";
             Conec1.EsSelect = false;
             Conec1.conectar();
+        }
+        public DataSet mostrarPrestamos(string id_cliente)
+        {
+            ConfigurarConexion("Multa");
+            Conec1.CadenaSQL = $"SELECT * FROM  {Conec1.NombreTabla} WHERE id_cliente='{id_cliente}'";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
         }
     }
 }
