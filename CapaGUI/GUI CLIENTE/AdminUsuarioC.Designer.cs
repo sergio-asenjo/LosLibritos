@@ -40,12 +40,12 @@ namespace CapaGUI
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtRut = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridMultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridPrestamos)).BeginInit();
@@ -130,9 +130,9 @@ namespace CapaGUI
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(294, 135);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.Size = new System.Drawing.Size(96, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Nombre Completo:";
+            this.label7.Text = "Fecha Nacimiento:";
             // 
             // label8
             // 
@@ -152,53 +152,53 @@ namespace CapaGUI
             this.label9.TabIndex = 10;
             this.label9.Text = "Direccion:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(409, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Location = new System.Drawing.Point(409, 40);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 11;
             // 
-            // textBox2
+            // txtRut
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(409, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtRut.Enabled = false;
+            this.txtRut.Location = new System.Drawing.Point(409, 70);
+            this.txtRut.Name = "txtRut";
+            this.txtRut.Size = new System.Drawing.Size(100, 20);
+            this.txtRut.TabIndex = 12;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(409, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Location = new System.Drawing.Point(409, 99);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 13;
             // 
-            // textBox4
+            // txtFecha
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(409, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 14;
+            this.txtFecha.Enabled = false;
+            this.txtFecha.Location = new System.Drawing.Point(409, 128);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(100, 20);
+            this.txtFecha.TabIndex = 14;
             // 
-            // textBox5
+            // txtTelefono
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(409, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 15;
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(409, 157);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 15;
             // 
-            // textBox6
+            // txtDireccion
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(409, 186);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 16;
+            this.txtDireccion.Enabled = false;
+            this.txtDireccion.Location = new System.Drawing.Point(409, 186);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.TabIndex = 16;
             // 
             // btnSalir
             // 
@@ -215,12 +215,12 @@ namespace CapaGUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 384);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtFecha);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtRut);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -234,6 +234,7 @@ namespace CapaGUI
             this.Controls.Add(this.GridMultas);
             this.Name = "AdminUsuarioC";
             this.Text = "AdminUsuarioC";
+            this.Load += new System.EventHandler(this.AdminUsuarioC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridMultas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridPrestamos)).EndInit();
             this.ResumeLayout(false);
@@ -254,12 +255,12 @@ namespace CapaGUI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtRut;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnSalir;
     }
 }

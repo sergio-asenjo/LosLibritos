@@ -1,4 +1,5 @@
-﻿using CapaGUI.GUI_ADMIN.GUI_LIBROS;
+﻿using CapaDTO;
+using CapaGUI.GUI_ADMIN.GUI_LIBROS;
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
@@ -33,11 +34,52 @@ namespace CapaGUI.GUI_ADMIN
         {
             try
             {
+                if (txtISBN.Text.Length == 0)
+                {
+                    MessageBox.Show("ISBN Vacio", "Mensaje de Sistema");
+                }
+                else if (txtTitulo.Text.Length == 0)
+                {
+                    MessageBox.Show("Titulo Vacio", "Mensaje de Sistema");
+                }
+                else if (txtEdicion.Text.Length == 0)
+                {
+                    MessageBox.Show("Edicion Vacio", "Mensaje de Sistema");
+                }
+                else if (txtIdioma.Text.Length == 0)
+                {
+                    MessageBox.Show("Idioma Vacio", "Mensaje de Sistema");
+                }
+                else if (txtStock.Text.Length == 0)
+                {
+                    MessageBox.Show("Stock Vacio", "Mensaje de Sistema");
+                }
+                else if (txtDescripcion.Text.Length == 0)
+                {
+                    MessageBox.Show("Descripcion Vacia", "Mensaje de Sistema");
+                }
+                else
+                {
+                    Libro auxLibro = new Libro();
 
+                    auxLibro.Isbn = txtISBN.Text;
+                    auxLibro.Titulo = txtTitulo.Text;
+                    auxLibro.Edicion = txtEdicion.Text;
+                    auxLibro.Idioma = txtIdioma.Text;
+                    auxLibro.Stock = int.Parse(txtStock.Text);
+                    auxLibro.Descripcion = txtDescripcion.Text;
+                    auxLibro.Nombre_autor = comboAutor.Text;
+                    auxLibro.Nombre_categoria = comboCategoria.Text;
+
+                    NegocioLibro auxNegocioLibro = new NegocioLibro();
+
+                    auxNegocioLibro.AnadirLibro(auxLibro);
+                    MessageBox.Show("Libro Guardado", "Mensaje de Sistema");
+                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Datos Erroneos. " + ex.Message, "Mensaje de sistema");
+                MessageBox.Show("Error. " + ex.Message, "Mensaje de Sistema");
             }
         }
 
@@ -64,9 +106,19 @@ namespace CapaGUI.GUI_ADMIN
         private void AdminLibrosA_Load(object sender, EventArgs e)
         {
             NegocioAutor auxAutor = new NegocioAutor();
-            dataGrid1.DataSource = auxAutor.mostrarListado();
-            dataGrid1.DataMember = "Autor";
+            comboAutor.Text = "Selecciona Autor";
+            comboCategoria.Text = "Selecciona Categoria";
+            for (int i = 0; i <= auxAutor.mostrarListadoAutor().Tables.Count ; i++)
+            {
+                comboAutor.Items.Add(auxAutor.mostrarListadoAutor().Tables[0].Rows[i]["nombre"].ToString());
+            }
 
+            NegocioCategoria auxCategoria = new NegocioCategoria();
+
+            for (int i = 0; i < auxCategoria.mostrarListadoCategoria().Tables.Count; i++)
+            {
+                comboCategoria.Items.Add(auxCategoria.mostrarListadoCategoria().Tables[0].Rows[i]["nombre_genero"].ToString());
+            }
             
 
         }

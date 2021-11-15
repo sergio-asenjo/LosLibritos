@@ -16,7 +16,7 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
-        public DataSet mostrarListado()
+        public DataSet mostrarListadoAutor()
         {
             ConfigurarConexion("autor");
             Conec1.CadenaSQL = $"SELECT nombre FROM {Conec1.NombreTabla}";

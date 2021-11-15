@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -13,6 +14,14 @@ namespace CapaNegocio
                                $"('{categoria.Nombre_genero}','{categoria.Descripcion}');";
             Conec1.EsSelect = false;
             Conec1.conectar();
+        }
+        public DataSet mostrarListadoCategoria()
+        {
+            ConfigurarConexion("categoria");
+            Conec1.CadenaSQL = $"SELECT nombre_genero FROM {Conec1.NombreTabla}";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
         }
     }
 }

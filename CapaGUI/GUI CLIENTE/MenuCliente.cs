@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace CapaGUI
 {
     public partial class MenuCliente : Form
     {
+        private Cliente auxclientemenu;
+
+        public Cliente Auxclientemenu { get => auxclientemenu; set => auxclientemenu = value; }
+
         public MenuCliente()
         {
             InitializeComponent();
@@ -31,8 +36,16 @@ namespace CapaGUI
 
         private void btnAdminUser_Click(object sender, EventArgs e)
         {
+            
             AdminUsuarioC admin1 = new AdminUsuarioC();
+            admin1.Auxclienteadmin = Auxclientemenu;
             admin1.Show();
+            
+        }
+
+        private void MenuCliente_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

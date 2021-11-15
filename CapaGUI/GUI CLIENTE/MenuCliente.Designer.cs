@@ -77,6 +77,7 @@ namespace CapaGUI
             this.Controls.Add(this.btnSolicitarL);
             this.Name = "MenuCliente";
             this.Text = "MenuCliente";
+            this.Load += new System.EventHandler(this.MenuCliente_Load);
             this.ResumeLayout(false);
 
         }

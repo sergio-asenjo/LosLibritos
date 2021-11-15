@@ -12,19 +12,6 @@
         private string nombre_autor;
         private string nombre_categoria;
 
-        public Libro(int id_libro, string titulo, string descripcion, string edicion, string idioma, string isbn, int stock, string nombre_autor, string nombre_categoria)
-        {
-            this.id_libro = id_libro;
-            this.titulo = titulo;
-            this.descripcion = descripcion;
-            this.edicion = edicion;
-            this.idioma = idioma;
-            this.isbn = isbn;
-            this.stock = stock;
-            this.nombre_autor = nombre_autor;
-            this.nombre_categoria = nombre_categoria;
-        }
-
         public int Id_libro { get => id_libro; set => id_libro = value; }
         public string Titulo { get => titulo; set => titulo = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }

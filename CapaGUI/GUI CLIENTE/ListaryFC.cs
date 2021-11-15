@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,13 @@ namespace CapaGUI
             {
                 MessageBox.Show("Datos Erroneos. " + ex.Message, "Mensaje de sistema");
             }
+        }
+
+        private void ListaryFC_Load(object sender, EventArgs e)
+        {
+            NegocioLibro auxNegocioLibro = new NegocioLibro();
+            this.gridLibros.DataSource = auxNegocioLibro.mostrarLibros();
+            this.gridLibros.DataMember = "Libro";
         }
     }
 }

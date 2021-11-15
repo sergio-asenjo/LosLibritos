@@ -22,7 +22,7 @@ namespace CapaNegocio
 
         public DataSet mostrarDatosCliente(string rut)
         {
-            ConfigurarConexion("Usuario");
+            ConfigurarConexion("Cliente");
             Conec1.CadenaSQL = $"SELECT * FROM  {Conec1.NombreTabla} WHERE rut='{rut}'";
             Conec1.EsSelect = true;
             Conec1.conectar();

@@ -32,9 +32,9 @@ namespace CapaGUI
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridLibros = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,13 +63,13 @@ namespace CapaGUI
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // gridLibros
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(452, 159);
-            this.dataGridView1.TabIndex = 3;
+            this.gridLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLibros.Location = new System.Drawing.Point(15, 69);
+            this.gridLibros.Name = "gridLibros";
+            this.gridLibros.Size = new System.Drawing.Size(452, 159);
+            this.gridLibros.TabIndex = 3;
             // 
             // btnSalir
             // 
@@ -86,13 +86,14 @@ namespace CapaGUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 292);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridLibros);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "ListaryFC";
             this.Text = "Listado de Libros";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ListaryFC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridLibros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,7 +104,7 @@ namespace CapaGUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridLibros;
         private System.Windows.Forms.Button btnSalir;
     }
 }
