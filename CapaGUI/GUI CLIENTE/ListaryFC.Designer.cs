@@ -70,9 +70,12 @@ namespace CapaGUI
             // 
             // gridLibros
             // 
+            this.gridLibros.AllowUserToAddRows = false;
+            this.gridLibros.AllowUserToDeleteRows = false;
             this.gridLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLibros.Location = new System.Drawing.Point(15, 101);
             this.gridLibros.Name = "gridLibros";
+            this.gridLibros.ReadOnly = true;
             this.gridLibros.Size = new System.Drawing.Size(588, 189);
             this.gridLibros.TabIndex = 3;
             // 

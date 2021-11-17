@@ -33,6 +33,9 @@ namespace CapaGUI
             this.btnAdminSoli = new System.Windows.Forms.Button();
             this.btnAdminLibros = new System.Windows.Forms.Button();
             this.btnInformes = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.lblUsuarioLogged = new System.Windows.Forms.Label();
+            this.lblUsuarioCon = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdminMultas
@@ -79,11 +82,45 @@ namespace CapaGUI
             this.btnInformes.UseVisualStyleBackColor = true;
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(410, 307);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(106, 24);
+            this.btnCerrarSesion.TabIndex = 9;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // lblUsuarioLogged
+            // 
+            this.lblUsuarioLogged.AutoSize = true;
+            this.lblUsuarioLogged.Location = new System.Drawing.Point(128, 313);
+            this.lblUsuarioLogged.Name = "lblUsuarioLogged";
+            this.lblUsuarioLogged.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuarioLogged.TabIndex = 8;
+            this.lblUsuarioLogged.Text = "Usuario";
+            this.lblUsuarioLogged.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblUsuarioCon
+            // 
+            this.lblUsuarioCon.AutoSize = true;
+            this.lblUsuarioCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioCon.Location = new System.Drawing.Point(12, 313);
+            this.lblUsuarioCon.Name = "lblUsuarioCon";
+            this.lblUsuarioCon.Size = new System.Drawing.Size(119, 13);
+            this.lblUsuarioCon.TabIndex = 7;
+            this.lblUsuarioCon.Text = "Usuario Conectado:";
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 339);
+            this.Controls.Add(this.btnCerrarSesion);
+            this.Controls.Add(this.lblUsuarioLogged);
+            this.Controls.Add(this.lblUsuarioCon);
             this.Controls.Add(this.btnInformes);
             this.Controls.Add(this.btnAdminMultas);
             this.Controls.Add(this.btnAdminSoli);
@@ -91,6 +128,7 @@ namespace CapaGUI
             this.Name = "MenuAdmin";
             this.Text = "Menu Administración";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +138,8 @@ namespace CapaGUI
         private System.Windows.Forms.Button btnAdminSoli;
         private System.Windows.Forms.Button btnAdminLibros;
         private System.Windows.Forms.Button btnInformes;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label lblUsuarioLogged;
+        private System.Windows.Forms.Label lblUsuarioCon;
     }
 }

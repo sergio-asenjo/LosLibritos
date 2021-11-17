@@ -28,7 +28,8 @@ namespace CapaGUI
                 if (txtUsuario.Text == "admin" && txtContra.Text == "admin")
                 {
                     MenuAdmin menu2 = new MenuAdmin();
-                    menu2.ShowDialog();
+                    menu2.Show();
+                    Hide();
                 }
 
                 else if (auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["usuario"].ToString() == txtUsuario.Text && auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["contrasena"].ToString() == txtContra.Text)

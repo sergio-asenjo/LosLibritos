@@ -41,5 +41,13 @@ namespace CapaGUI
             SolicitarInformesA soliinfo = new SolicitarInformesA();
             soliinfo.ShowDialog();
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            var menuLogin = new Login();
+            GC.Collect();
+            menuLogin.Show();
+        }
     }
 }
