@@ -7,13 +7,13 @@ namespace CapaNegocio
     {
         // Hereda de "Negocio", por lo que ya tiene el atributo Conec1 y el método ConfigurarConexión.
 
-        public void AnadirPrestamo(Prestamo prestamo, string rut, string titulo)
+        public void AnadirPrestamo(string rut, string isbn)
         {
             ConfigurarConexion("Prestamo");
             Conec1.CadenaSQL = $"INSERT INTO {Conec1.NombreTabla} (fecha_prestamo, fecha_devolucion, activo, pendiente_pago, id_cliente, id_libro, id_multa) VALUES" +
                                $"(GETDATE(), (GETDATE() + 3), 1, 0, " +
                                $"(SELECT id_cliente FROM Usuario WHERE rut = '{rut}') , " +
-                               $"(SELECT id_libro FROM Libro WHERE titulo = '{titulo}') , null);";
+                               $"(SELECT id_libro FROM Libro WHERE isbn = '{isbn}') , null);";
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
