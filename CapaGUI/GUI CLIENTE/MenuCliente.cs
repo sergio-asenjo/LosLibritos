@@ -19,7 +19,9 @@ namespace CapaGUI
         private void btnSolicitarL_Click(object sender, EventArgs e)
         {
             SolicitarLibrosC soli1 = new SolicitarLibrosC();
+            soli1.Auxclienteprestamo = Auxclientemenu;
             soli1.ShowDialog();
+            
         }
 
         private void btnListar_Click(object sender, EventArgs e)

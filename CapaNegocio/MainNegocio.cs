@@ -9,7 +9,7 @@ namespace CapaNegocio
             var prestamo = new Prestamo();
 
             var nPrestamo = new NegocioPrestamo();
-            nPrestamo.AnadirPrestamo(prestamo, "1-0", "Pinocho");
+            nPrestamo.AnadirPrestamo("1-0", "Pinocho");
 
         }
     }

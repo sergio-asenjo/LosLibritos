@@ -22,7 +22,11 @@ namespace CapaNegocio
         public DataSet mostrarLibros()
         {
             ConfigurarConexion("libro");
-            Conec1.CadenaSQL = $"SELECT titulo AS Título, descripcion as Descripción, edicion as Edición, idioma as Idioma, isbn as ISBN, stock as Stock FROM {Conec1.NombreTabla}";
+            Conec1.CadenaSQL = $"Select lb.titulo as Titulo, au.nombre as Nombre_Autor, ca.nombre_genero as Genero, lb.descripcion as Descripcion, lb.edicion as Edicion, lb.idioma as Idioma, lb.isbn as ISBN, lb.stock as Stock " +
+                               $"From Libro lb join Categoria ca "+
+                               $"on lb.id_categoria = ca.id_categoria "+
+                               $"join Autor au "+
+                               $"on lb.id_autor = au.id_autor;";
             Conec1.EsSelect = true;
             Conec1.conectar();
             return Conec1.DbDataSet;
