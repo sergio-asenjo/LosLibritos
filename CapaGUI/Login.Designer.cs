@@ -35,6 +35,7 @@ namespace CapaGUI
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.chkBoxContrasena = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnIniciarS
@@ -56,7 +57,6 @@ namespace CapaGUI
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -78,8 +78,10 @@ namespace CapaGUI
             // 
             this.txtContra.Location = new System.Drawing.Point(130, 140);
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(122, 20);
             this.txtContra.TabIndex = 4;
+            this.txtContra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContra_KeyPress);
             // 
             // button1
             // 
@@ -91,11 +93,23 @@ namespace CapaGUI
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // chkBoxContrasena
+            // 
+            this.chkBoxContrasena.AutoSize = true;
+            this.chkBoxContrasena.Location = new System.Drawing.Point(130, 178);
+            this.chkBoxContrasena.Name = "chkBoxContrasena";
+            this.chkBoxContrasena.Size = new System.Drawing.Size(118, 17);
+            this.chkBoxContrasena.TabIndex = 6;
+            this.chkBoxContrasena.Text = "Mostrar Contraseña";
+            this.chkBoxContrasena.UseVisualStyleBackColor = true;
+            this.chkBoxContrasena.CheckedChanged += new System.EventHandler(this.chkBoxContrasena_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 318);
+            this.Controls.Add(this.chkBoxContrasena);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
@@ -104,7 +118,7 @@ namespace CapaGUI
             this.Controls.Add(this.btnIniciarS);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +132,7 @@ namespace CapaGUI
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chkBoxContrasena;
     }
 }
 

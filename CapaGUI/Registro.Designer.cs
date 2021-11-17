@@ -98,7 +98,6 @@ namespace CapaGUI
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Fecha de Nacimiento:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -201,6 +200,7 @@ namespace CapaGUI
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(134, 20);
             this.txtContra.TabIndex = 17;
+            this.txtContra.PasswordChar = '*';
             // 
             // txtEmail
             // 
@@ -252,7 +252,6 @@ namespace CapaGUI
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Size = new System.Drawing.Size(134, 20);
             this.dateFechaNacimiento.TabIndex = 23;
-            this.dateFechaNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // Registro
             // 

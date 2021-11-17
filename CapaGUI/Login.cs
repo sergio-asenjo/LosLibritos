@@ -1,13 +1,6 @@
 ﻿using CapaDTO;
 using CapaNegocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaGUI
@@ -19,21 +12,11 @@ namespace CapaGUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Registro reg1 = new Registro();
             reg1.Show();
             
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnIniciarS_Click(object sender, EventArgs e)
@@ -71,7 +54,9 @@ namespace CapaGUI
                     auxcliente.Miembro = false;
 
                     menu1.Auxclientemenu = auxcliente;
-                    menu1.ShowDialog();
+                    menu1.Show();
+
+                    Hide();
                 }
 
                 else
@@ -85,6 +70,34 @@ namespace CapaGUI
                 MessageBox.Show("Usuario o Contraseña incorrectos ingrese nuevamente. " + ex.Message , "Mensaje de sistema");
             }
             
+        }
+
+        private void chkBoxContrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBoxContrasena.Checked == true)
+            {
+                if (txtContra.PasswordChar == '*')
+                {
+                    txtContra.PasswordChar = '\0';
+                }
+            }
+            else
+            {
+                txtContra.PasswordChar = '*';
+            }
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnIniciarS_Click(sender, e);
+            }
         }
     }
 }
