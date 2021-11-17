@@ -1,12 +1,5 @@
 ﻿using CapaNegocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaGUI
@@ -18,10 +11,28 @@ namespace CapaGUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
             try
             {
+                string busqueda = txtBusqueda.Text;
+                var nLibro = new NegocioLibro();
+
+                if (rdoTitulo.Checked)
+                {
+                    gridLibros.DataSource = nLibro.FiltrarTitulo(busqueda);
+                    gridLibros.DataMember = "Libro";
+                }
+                else if (rdoAutor.Checked)
+                {
+                    gridLibros.DataSource = nLibro.FiltrarAutor(busqueda);
+                    gridLibros.DataMember = "Libro";
+                }
+                else if (rdoCategoria.Checked)
+                {
+                    gridLibros.DataSource = nLibro.FiltrarCategoria(busqueda);
+                    gridLibros.DataMember = "Libro";
+                }
 
             }
 
@@ -36,6 +47,12 @@ namespace CapaGUI
             NegocioLibro auxNegocioLibro = new NegocioLibro();
             this.gridLibros.DataSource = auxNegocioLibro.mostrarLibros();
             this.gridLibros.DataMember = "Libro";
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            GC.Collect();
         }
     }
 }
