@@ -22,7 +22,37 @@ namespace CapaNegocio
         public DataSet mostrarLibros()
         {
             ConfigurarConexion("libro");
-            Conec1.CadenaSQL = $"SELECT titulo AS Titulo, descripcion as Descripción, edicion as Edición, idioma as Idioma, isbn as ISBN, stock as Stock FROM {Conec1.NombreTabla}";
+            Conec1.CadenaSQL = $"SELECT titulo AS Título, descripcion as Descripción, edicion as Edición, idioma as Idioma, isbn as ISBN, stock as Stock FROM {Conec1.NombreTabla}";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public DataSet FiltrarTitulo(string titulo)
+        {
+            ConfigurarConexion("libro");
+            Conec1.CadenaSQL = $"SELECT titulo AS Título, descripcion as Descripción, edicion as Edición, idioma as Idioma, isbn as ISBN, stock as Stock FROM {Conec1.NombreTabla} " +
+                               $"WHERE titulo LIKE '%{titulo}%';";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public DataSet FiltrarCategoria(string categoria)
+        {
+            ConfigurarConexion("libro");
+            Conec1.CadenaSQL = $"SELECT {Conec1.NombreTabla}.titulo AS Título, {Conec1.NombreTabla}.descripcion as Descripción, {Conec1.NombreTabla}.edicion as Edición, {Conec1.NombreTabla}.idioma as Idioma, {Conec1.NombreTabla}.isbn as ISBN, {Conec1.NombreTabla}.stock as Stock FROM {Conec1.NombreTabla} " +
+                               $"JOIN Categoria ON {Conec1.NombreTabla}.id_categoria = Categoria.id_categoria WHERE Categoria.nombre_genero LIKE '%{categoria}%';";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public DataSet FiltrarAutor(string autor)
+        {
+            ConfigurarConexion("libro");
+            Conec1.CadenaSQL = $"SELECT Autor.nombre as 'Nombre Autor', {Conec1.NombreTabla}.titulo AS Título, {Conec1.NombreTabla}.descripcion as Descripción, {Conec1.NombreTabla}.edicion as Edición, {Conec1.NombreTabla}.idioma as Idioma, {Conec1.NombreTabla}.isbn as ISBN, {Conec1.NombreTabla}.stock as Stock FROM {Conec1.NombreTabla} " +
+                               $"JOIN Autor ON {Conec1.NombreTabla}.id_autor = Autor.id_autor WHERE Autor.nombre LIKE '%{autor}%';";
             Conec1.EsSelect = true;
             Conec1.conectar();
             return Conec1.DbDataSet;
