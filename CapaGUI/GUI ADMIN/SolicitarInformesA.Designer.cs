@@ -33,6 +33,7 @@ namespace CapaGUI.GUI_ADMIN
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -43,7 +44,6 @@ namespace CapaGUI.GUI_ADMIN
             this.button1.TabIndex = 0;
             this.button1.Text = "Informe de Multas Semanales";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -72,11 +72,22 @@ namespace CapaGUI.GUI_ADMIN
             this.button4.Text = "Informe de Multas Mensuales";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(108, 337);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // SolicitarInformesA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 308);
+            this.ClientSize = new System.Drawing.Size(297, 384);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -93,5 +104,6 @@ namespace CapaGUI.GUI_ADMIN
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
