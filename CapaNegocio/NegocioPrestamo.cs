@@ -17,13 +17,37 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
-        public DataSet mostrarPrestamos(string id_cliente)
+        public DataSet mostrarPrestamos(string rut)
         {
-            ConfigurarConexion("Multa");
-            Conec1.CadenaSQL = $"SELECT * FROM  {Conec1.NombreTabla} WHERE id_cliente='{id_cliente}'";
+            ConfigurarConexion("Prestamo");
+            Conec1.CadenaSQL = $"SELECT li.titulo as Titulo, mu.fecha_prestamo as 'Fecha Prestamo', mu.fecha_devolucion as 'Fecha Devolucion'," +
+                               $"CASE WHEN mu.activo = 1 THEN 'Activo' WHEN mu.activo = 0 THEN 'Pagado' END as 'Estado Solicitud'," +
+                               $"CASE WHEN mu.pendiente_pago = 1 THEN 'Falta Pago' WHEN mu.pendiente_pago = 0 THEN 'No' END as 'Pendiente de Pago '" +
+                               $"FROM Prestamo mu JOIN Usuario us ON mu.id_cliente = us.id_cliente " +
+                               $"JOIN Libro li ON mu.id_libro = li.id_libro WHERE us.rut = '{rut}';";
             Conec1.EsSelect = true;
             Conec1.conectar();
             return Conec1.DbDataSet;
+        }
+        public DataSet mostrarPrestamosGeneral()
+        {
+            ConfigurarConexion("Prestamo");
+            Conec1.CadenaSQL = $"SELECT us.nombre + ' ' +  us.apellido_paterno + ' ' + us.apellido_materno,li.isbn as ISBN , li.titulo as Titulo, mu.fecha_prestamo as 'Fecha Prestamo', mu.fecha_devolucion as 'Fecha Devolucion', mu.id_prestamo as 'ID', " +
+                               $"CASE WHEN mu.activo = 1 THEN 'Activo' WHEN mu.activo = 0 THEN 'Pagado' END as 'Estado Solicitud'," +
+                               $"CASE WHEN mu.pendiente_pago = 1 THEN 'Falta Pago' WHEN mu.pendiente_pago = 0 THEN 'No' END as 'Pendiente de Pago' " +
+                               $"FROM Prestamo mu JOIN Usuario us ON mu.id_cliente = us.id_cliente " +
+                               $"JOIN Libro li ON mu.id_libro = li.id_libro WHERE mu.activo = '1';";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public void finalizarPrestamo(int id)
+        {
+            ConfigurarConexion("Prestamo");
+            Conec1.CadenaSQL = $"UPDATE Prestamo SET activo = 0 WHERE id_prestamo = {id};";
+            Conec1.EsSelect = false;
+            Conec1.conectar();
         }
     }
 }

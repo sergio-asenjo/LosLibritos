@@ -56,7 +56,7 @@ namespace CapaGUI
             this.GridMultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridMultas.Location = new System.Drawing.Point(12, 38);
             this.GridMultas.Name = "GridMultas";
-            this.GridMultas.Size = new System.Drawing.Size(240, 150);
+            this.GridMultas.Size = new System.Drawing.Size(507, 150);
             this.GridMultas.TabIndex = 0;
             // 
             // label1
@@ -84,14 +84,14 @@ namespace CapaGUI
             this.GridPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPrestamos.Location = new System.Drawing.Point(12, 215);
             this.GridPrestamos.Name = "GridPrestamos";
-            this.GridPrestamos.Size = new System.Drawing.Size(240, 150);
+            this.GridPrestamos.Size = new System.Drawing.Size(507, 150);
             this.GridPrestamos.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(297, 20);
+            this.label3.Location = new System.Drawing.Point(595, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 15);
             this.label3.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace CapaGUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(294, 48);
+            this.label4.Location = new System.Drawing.Point(592, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 5;
@@ -109,7 +109,7 @@ namespace CapaGUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(294, 77);
+            this.label5.Location = new System.Drawing.Point(592, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 6;
@@ -118,7 +118,7 @@ namespace CapaGUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(294, 106);
+            this.label6.Location = new System.Drawing.Point(592, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace CapaGUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(294, 135);
+            this.label7.Location = new System.Drawing.Point(592, 135);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 13);
             this.label7.TabIndex = 8;
@@ -136,7 +136,7 @@ namespace CapaGUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(294, 164);
+            this.label8.Location = new System.Drawing.Point(592, 164);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace CapaGUI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(294, 193);
+            this.label9.Location = new System.Drawing.Point(592, 193);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 10;
@@ -154,7 +154,7 @@ namespace CapaGUI
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(409, 40);
+            this.txtNombre.Location = new System.Drawing.Point(707, 40);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 11;
@@ -162,7 +162,7 @@ namespace CapaGUI
             // txtRut
             // 
             this.txtRut.Enabled = false;
-            this.txtRut.Location = new System.Drawing.Point(409, 70);
+            this.txtRut.Location = new System.Drawing.Point(707, 70);
             this.txtRut.Name = "txtRut";
             this.txtRut.Size = new System.Drawing.Size(100, 20);
             this.txtRut.TabIndex = 12;
@@ -170,7 +170,7 @@ namespace CapaGUI
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(409, 99);
+            this.txtEmail.Location = new System.Drawing.Point(707, 99);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 13;
@@ -178,7 +178,7 @@ namespace CapaGUI
             // txtFecha
             // 
             this.txtFecha.Enabled = false;
-            this.txtFecha.Location = new System.Drawing.Point(409, 128);
+            this.txtFecha.Location = new System.Drawing.Point(707, 128);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(100, 20);
             this.txtFecha.TabIndex = 14;
@@ -186,7 +186,7 @@ namespace CapaGUI
             // txtTelefono
             // 
             this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(409, 157);
+            this.txtTelefono.Location = new System.Drawing.Point(707, 157);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 15;
@@ -194,14 +194,14 @@ namespace CapaGUI
             // txtDireccion
             // 
             this.txtDireccion.Enabled = false;
-            this.txtDireccion.Location = new System.Drawing.Point(409, 186);
+            this.txtDireccion.Location = new System.Drawing.Point(707, 186);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 16;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(374, 275);
+            this.btnSalir.Location = new System.Drawing.Point(670, 272);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 17;
@@ -213,7 +213,7 @@ namespace CapaGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 384);
+            this.ClientSize = new System.Drawing.Size(854, 384);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtTelefono);

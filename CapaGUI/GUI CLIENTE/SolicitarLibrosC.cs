@@ -35,6 +35,10 @@ namespace CapaGUI
                     NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
                     
                     auxnegocioprestamo.AnadirPrestamo(Auxclienteprestamo.Rut, txtBuscar.Text);
+
+                    NegocioLibro auxnegociolibro = new NegocioLibro();
+
+                    auxnegociolibro.EliminarStock(txtBuscar.Text);
                     
                 }
             }

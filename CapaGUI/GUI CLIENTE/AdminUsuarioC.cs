@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -16,6 +17,11 @@ namespace CapaGUI
 
         private void AdminUsuarioC_Load(object sender, EventArgs e)
         {
+            NegocioPrestamo auxprestamo = new NegocioPrestamo();
+
+            this.GridPrestamos.DataSource = auxprestamo.mostrarPrestamos(auxclienteadmin.Rut);
+            this.GridPrestamos.DataMember = "Prestamo";
+
             txtNombre.Text = Auxclienteadmin.Nombre;
             txtDireccion.Text = Auxclienteadmin.Direccion;
             txtEmail.Text = Auxclienteadmin.Email;

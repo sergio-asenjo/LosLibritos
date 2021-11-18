@@ -61,5 +61,19 @@ namespace CapaNegocio
             Conec1.conectar();
             return Conec1.DbDataSet;
         }
+        public void EliminarStock(string isbn)
+        {
+            ConfigurarConexion("libro");
+            Conec1.CadenaSQL = $"UPDATE libro set stock = stock -1 where isbn = '{isbn}';";
+            Conec1.EsSelect = false;
+            Conec1.conectar();
+        }
+        public void AgregarStock(string isbn)
+        {
+            ConfigurarConexion("libro");
+            Conec1.CadenaSQL = $"UPDATE libro set stock = stock +1 where isbn = '{isbn}';";
+            Conec1.EsSelect = false;
+            Conec1.conectar();
+        }
     }
 }
