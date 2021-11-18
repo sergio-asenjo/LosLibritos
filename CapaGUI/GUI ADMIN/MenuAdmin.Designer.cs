@@ -127,6 +127,7 @@ namespace CapaGUI
             this.Controls.Add(this.btnAdminLibros);
             this.Name = "MenuAdmin";
             this.Text = "Menu Administración";
+            this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

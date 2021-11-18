@@ -1,18 +1,16 @@
 ﻿using CapaGUI.GUI_ADMIN;
+using CapaDTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaGUI
 {
     public partial class MenuAdmin : Form
     {
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+
+        public Empleado AuxEmpleado { get; set; }
+
         public MenuAdmin()
         {
             InitializeComponent();
@@ -48,6 +46,21 @@ namespace CapaGUI
             var menuLogin = new Login();
             GC.Collect();
             menuLogin.Show();
+        }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+            lblUsuarioLogged.Text = AuxEmpleado.Username;
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
     }
 }

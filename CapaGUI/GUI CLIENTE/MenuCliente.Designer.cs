@@ -79,7 +79,6 @@ namespace CapaGUI
             this.lblUsuarioCon.Size = new System.Drawing.Size(119, 13);
             this.lblUsuarioCon.TabIndex = 3;
             this.lblUsuarioCon.Text = "Usuario Conectado:";
-            this.lblUsuarioCon.Click += new System.EventHandler(this.lblUsuarioCon_Click);
             // 
             // lblUsuarioLogged
             // 
@@ -90,7 +89,6 @@ namespace CapaGUI
             this.lblUsuarioLogged.TabIndex = 4;
             this.lblUsuarioLogged.Text = "Usuario";
             this.lblUsuarioLogged.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUsuarioLogged.Click += new System.EventHandler(this.lblUsuarioLogged_Click);
             // 
             // btnCerrarSesion
             // 

@@ -2,32 +2,18 @@
 using CapaGUI.GUI_ADMIN.GUI_LIBROS;
 using CapaNegocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN
 {
     public partial class AdminLibrosA : Form
     {
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+
         public AdminLibrosA()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnGuardarLibro_Click(object sender, EventArgs e)
@@ -105,22 +91,33 @@ namespace CapaGUI.GUI_ADMIN
 
         private void AdminLibrosA_Load(object sender, EventArgs e)
         {
-            NegocioAutor auxAutor = new NegocioAutor();
+            var auxAutor = new NegocioAutor();
+            var auxCategoria = new NegocioCategoria();
             comboAutor.Text = "Selecciona Autor";
             comboCategoria.Text = "Selecciona Categoria";
-            for (int i = 0; i <= auxAutor.mostrarListadoAutor().Tables.Count ; i++)
+            DataSet listadoAutores = auxAutor.mostrarListadoAutor();
+            DataSet listadoCategorias = auxCategoria.mostrarListadoCategoria();
+
+            for (int i = 0; i <= listadoAutores.Tables.Count ; i++)
             {
-                comboAutor.Items.Add(auxAutor.mostrarListadoAutor().Tables[0].Rows[i]["nombre"].ToString());
+                comboAutor.Items.Add(listadoAutores.Tables[0].Rows[i]["nombre"].ToString());
             }
 
-            NegocioCategoria auxCategoria = new NegocioCategoria();
 
-            for (int i = 0; i < auxCategoria.mostrarListadoCategoria().Tables.Count; i++)
+            for (int i = 0; i < listadoCategorias.Tables.Count; i++)
             {
-                comboCategoria.Items.Add(auxCategoria.mostrarListadoCategoria().Tables[0].Rows[i]["nombre_genero"].ToString());
+                comboCategoria.Items.Add(listadoCategorias.Tables[0].Rows[i]["nombre_genero"].ToString());
             }
-            
+        }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
     }
 }

@@ -61,15 +61,5 @@ namespace CapaGUI
                 return myCp;
             }
         }
-
-        private void lblUsuarioLogged_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsuarioCon_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

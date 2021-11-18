@@ -84,7 +84,6 @@ namespace CapaGUI.GUI_ADMIN
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Edicion:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -121,7 +120,6 @@ namespace CapaGUI.GUI_ADMIN
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 7;
             this.label7.Text = "Categoria:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtTitulo
             // 

@@ -1,6 +1,7 @@
 ﻿using CapaDTO;
 using CapaNegocio;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CapaGUI
@@ -24,39 +25,67 @@ namespace CapaGUI
             try
             {
                 NegocioCliente auxNegocioCliente = new NegocioCliente();
-                              
-                if (txtUsuario.Text == "admin" && txtContra.Text == "admin")
+
+                DataSet usuario = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text);
+                string id = usuario.Tables[0].Rows[0]["id_empleado"].ToString();
+
+                if (usuario.Tables[0].Rows[0]["usuario"].ToString() == txtUsuario.Text
+                    && usuario.Tables[0].Rows[0]["contrasena"].ToString() == txtContra.Text
+                    && id.Length > 0)
                 {
                     MenuAdmin menu2 = new MenuAdmin();
+
+                    var auxEmpleado = new Empleado
+                    {
+                        Nombre = usuario.Tables[0].Rows[0]["nombre"].ToString(),
+                        Apaterno = usuario.Tables[0].Rows[0]["apellido_paterno"].ToString(),
+                        Amaterno = usuario.Tables[0].Rows[0]["apellido_materno"].ToString(),
+                        Rut = usuario.Tables[0].Rows[0]["rut"].ToString(),
+                        Fecha_nacimiento = usuario.Tables[0].Rows[0]["fecha_nacimiento"].ToString(),
+                        Username = usuario.Tables[0].Rows[0]["usuario"].ToString(),
+                        Contrasena = usuario.Tables[0].Rows[0]["contrasena"].ToString(),
+                        Email = usuario.Tables[0].Rows[0]["email"].ToString(),
+                        Direccion = usuario.Tables[0].Rows[0]["direccion"].ToString(),
+                        Ciudad = usuario.Tables[0].Rows[0]["ciudad"].ToString(),
+                        Numero_telefono = int.Parse(usuario.Tables[0].Rows[0]["numero_telefono"].ToString()),
+                        Fecha_creacion = usuario.Tables[0].Rows[0]["fecha_creacion"].ToString(),
+                        Administrador = true,
+                        Estado = true,
+                        Fecha_ingreso = new DateTime().Date.ToString(),
+                        Tipo_empleado = "Administrador"
+                    };
+
+                    menu2.AuxEmpleado = auxEmpleado;
                     menu2.Show();
                     Hide();
                 }
 
-                else if (auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["usuario"].ToString() == txtUsuario.Text && auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["contrasena"].ToString() == txtContra.Text)
+                else if (usuario.Tables[0].Rows[0]["usuario"].ToString() == txtUsuario.Text
+                         && usuario.Tables[0].Rows[0]["contrasena"].ToString() == txtContra.Text)
                 {
                     MenuCliente menu1 = new MenuCliente();
 
-                    Cliente auxcliente = new Cliente();
-                    
-                    auxcliente.Nombre = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["nombre"].ToString();
-                    auxcliente.Apaterno = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["apellido_paterno"].ToString();
-                    auxcliente.Amaterno = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["apellido_materno"].ToString();
-                    auxcliente.Rut = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["rut"].ToString();
-                    auxcliente.Fecha_nacimiento = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["fecha_nacimiento"].ToString();
-                    auxcliente.Username = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["usuario"].ToString();
-                    auxcliente.Contrasena = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["contrasena"].ToString();
-                    auxcliente.Email = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["email"].ToString();
-                    auxcliente.Direccion = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["direccion"].ToString();
-                    auxcliente.Ciudad = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["ciudad"].ToString();
-                    auxcliente.Numero_telefono = int.Parse(auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["numero_telefono"].ToString());
-                    auxcliente.Fecha_creacion = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text).Tables[0].Rows[0]["fecha_creacion"].ToString();
-                    auxcliente.Cant_prestamos = 0;
-                    auxcliente.Multa_vigente = false;
-                    auxcliente.Miembro = false;
+                    Cliente auxcliente = new Cliente
+                    {
+                        Nombre = usuario.Tables[0].Rows[0]["nombre"].ToString(),
+                        Apaterno = usuario.Tables[0].Rows[0]["apellido_paterno"].ToString(),
+                        Amaterno = usuario.Tables[0].Rows[0]["apellido_materno"].ToString(),
+                        Rut = usuario.Tables[0].Rows[0]["rut"].ToString(),
+                        Fecha_nacimiento = usuario.Tables[0].Rows[0]["fecha_nacimiento"].ToString(),
+                        Username = usuario.Tables[0].Rows[0]["usuario"].ToString(),
+                        Contrasena = usuario.Tables[0].Rows[0]["contrasena"].ToString(),
+                        Email = usuario.Tables[0].Rows[0]["email"].ToString(),
+                        Direccion = usuario.Tables[0].Rows[0]["direccion"].ToString(),
+                        Ciudad = usuario.Tables[0].Rows[0]["ciudad"].ToString(),
+                        Numero_telefono = int.Parse(usuario.Tables[0].Rows[0]["numero_telefono"].ToString()),
+                        Fecha_creacion = usuario.Tables[0].Rows[0]["fecha_creacion"].ToString(),
+                        Cant_prestamos = 0,
+                        Multa_vigente = false,
+                        Miembro = false
+                    };
 
                     menu1.Auxclientemenu = auxcliente;
                     menu1.Show();
-
                     Hide();
                 }
 

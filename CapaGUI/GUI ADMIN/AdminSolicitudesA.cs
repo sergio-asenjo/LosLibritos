@@ -1,12 +1,5 @@
 ﻿using CapaNegocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN
@@ -18,6 +11,8 @@ namespace CapaGUI.GUI_ADMIN
 
         public string Auxestadopago { get => auxestadopago; set => auxestadopago = value; }
         public string Auxisbn { get => auxisbn; set => auxisbn = value; }
+
+        private const int CP_NOCLOSE_BUTTON = 0x200;
 
         public AdminSolicitudesA()
         {
@@ -77,6 +72,16 @@ namespace CapaGUI.GUI_ADMIN
                 txtPrueba.Text = row.Cells["ID"].Value.ToString();
                 Auxestadopago = row.Cells["Pendiente de Pago"].Value.ToString();
                 Auxisbn = row.Cells["ISBN"].Value.ToString();
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
             }
         }
     }
