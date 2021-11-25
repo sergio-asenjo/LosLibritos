@@ -98,13 +98,13 @@ namespace CapaGUI.GUI_ADMIN
             DataSet listadoAutores = auxAutor.mostrarListadoAutor();
             DataSet listadoCategorias = auxCategoria.mostrarListadoCategoria();
 
-            for (int i = 0; i <= listadoAutores.Tables.Count ; i++)
+            for (int i = 0; i < listadoAutores.Tables[0].Rows.Count ; i++)
             {
                 comboAutor.Items.Add(listadoAutores.Tables[0].Rows[i]["nombre"].ToString());
             }
 
 
-            for (int i = 0; i < listadoCategorias.Tables.Count; i++)
+            for (int i = 0; i < listadoCategorias.Tables[0].Rows.Count; i++)
             {
                 comboCategoria.Items.Add(listadoCategorias.Tables[0].Rows[i]["nombre_genero"].ToString());
             }

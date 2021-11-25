@@ -29,21 +29,22 @@ namespace CapaGUI.GUI_ADMIN
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMultaSemana = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnMultaMes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnMultaSemana
             // 
-            this.button1.Location = new System.Drawing.Point(74, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Informe de Multas Semanales";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMultaSemana.Location = new System.Drawing.Point(74, 40);
+            this.btnMultaSemana.Name = "btnMultaSemana";
+            this.btnMultaSemana.Size = new System.Drawing.Size(146, 37);
+            this.btnMultaSemana.TabIndex = 0;
+            this.btnMultaSemana.Text = "Informe de Multas Semanales";
+            this.btnMultaSemana.UseVisualStyleBackColor = true;
+            this.btnMultaSemana.Click += new System.EventHandler(this.btnMultaSemana_Click);
             // 
             // button2
             // 
@@ -63,14 +64,15 @@ namespace CapaGUI.GUI_ADMIN
             this.button3.Text = "Informe de Solicitudes";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnMultaMes
             // 
-            this.button4.Location = new System.Drawing.Point(74, 104);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Informe de Multas Mensuales";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnMultaMes.Location = new System.Drawing.Point(74, 104);
+            this.btnMultaMes.Name = "btnMultaMes";
+            this.btnMultaMes.Size = new System.Drawing.Size(146, 37);
+            this.btnMultaMes.TabIndex = 3;
+            this.btnMultaMes.Text = "Informe de Multas Mensuales";
+            this.btnMultaMes.UseVisualStyleBackColor = true;
+            this.btnMultaMes.Click += new System.EventHandler(this.btnMultaMes_Click);
             // 
             // btnSalir
             // 
@@ -88,10 +90,10 @@ namespace CapaGUI.GUI_ADMIN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(297, 384);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnMultaMes);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMultaSemana);
             this.Name = "SolicitarInformesA";
             this.Text = "Informes";
             this.ResumeLayout(false);
@@ -100,10 +102,10 @@ namespace CapaGUI.GUI_ADMIN
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMultaSemana;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnMultaMes;
         private System.Windows.Forms.Button btnSalir;
     }
 }

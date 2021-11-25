@@ -28,7 +28,7 @@ namespace CapaGUI
             {
                 if (txtBuscar.Text.Length == 0)
                 {
-                    MessageBox.Show("ISBN no puede estar vacio", "Error de sistema");
+                    MessageBox.Show("ISBN no puede estar vacio", "Error de Sistema");
                 }
                 else
                 {
@@ -39,12 +39,14 @@ namespace CapaGUI
                     NegocioLibro auxnegociolibro = new NegocioLibro();
 
                     auxnegociolibro.EliminarStock(txtBuscar.Text);
+
+                    MessageBox.Show("Libro Solicitado!", "Mensaje de Sistema");
                     
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema" + ex.Message, "Error de sistema");
+                MessageBox.Show("Error de sistema" + ex.Message, "Error de Sistema");
                
             }
         }

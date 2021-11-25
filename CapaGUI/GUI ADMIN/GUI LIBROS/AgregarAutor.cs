@@ -37,6 +37,10 @@ namespace CapaGUI.GUI_ADMIN.GUI_LIBROS
 
                     MessageBox.Show("Autor Agregado!", "Confirmacion de Sistema");
 
+                    AdminLibrosA auxmenu = new AdminLibrosA(); 
+
+                    auxmenu.Refresh();
+
                 }
             }
             catch(Exception ex)

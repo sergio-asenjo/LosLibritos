@@ -22,6 +22,27 @@ namespace CapaNegocio
             Conec1.conectar();
             return Conec1.DbDataSet;
         }
+        public DataSet mostrarMultaSemana()
+        {
+            ConfigurarConexion("Multa");
+            Conec1.CadenaSQL = $"SELECT fecha_multa as 'Fecha Multa', pagada as 'Estado de Pago' FROM Multa " +
+                               $"WHERE fecha_multa >= DATEADD(day, -7, GETDATE()) " +
+                               $"order by[Fecha Multa]ASC;";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public DataSet mostrarMultaMes()
+        {
+            ConfigurarConexion("Multa");
+            Conec1.CadenaSQL = $"SELECT fecha_multa as 'Fecha Multa', pagada as 'Estado de Pago' FROM Multa " +
+                               $"WHERE fecha_multa >= DATEADD(day, -31, GETDATE()) " +
+                               $"order by[Fecha Multa]ASC;";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
     }
 }
     
