@@ -37,5 +37,30 @@ namespace CapaNegocio
             Conec1.conectar();
             return Conec1.DbDataSet;
         }
+        public DataSet mostrarTodosClientes()
+        {
+            ConfigurarConexion("Usuario");
+            Conec1.CadenaSQL = $"SELECT nombre  + ' ' + apellido_paterno + ' ' + apellido_materno as 'Nombre Completo', rut as 'Rut', fecha_nacimiento as 'Fecha Nacimiento', usuario as 'Usuario', " +
+                               $"email as 'Email', direccion as 'Dirección', ciudad as 'Ciudad', numero_telefono as 'Telefono', " +
+                               $"CASE WHEN id_empleado is NULL THEN 'NO' ELSE 'SI' END as 'Empleado', " +
+                               $"CASE WHEN id_cliente is NULL THEN 'NO' ELSE 'SI' END as 'Cliente' " +
+                               $"FROM USUARIO;";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
+        public DataSet mostrarClienteFiltro(string filtro)
+        {
+            ConfigurarConexion("Usuario");
+            Conec1.CadenaSQL = $"SELECT nombre  + ' ' + apellido_paterno + ' ' + apellido_materno as 'Nombre Completo', rut as 'Rut', fecha_nacimiento as 'Fecha Nacimiento', usuario as 'Usuario', " +
+                               $"email as 'Email', direccion as 'Dirección', ciudad as 'Ciudad', numero_telefono as 'Telefono', " +
+                               $"CASE WHEN id_empleado is NULL THEN 'NO' ELSE 'SI'END as 'Empleado', " +
+                               $"CASE WHEN id_cliente is NULL THEN 'NO' ELSE 'SI' END as 'Cliente' " +
+                               $"FROM USUARIO WHERE Nombre LIKE '%{filtro}%'; ";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
     }
 }

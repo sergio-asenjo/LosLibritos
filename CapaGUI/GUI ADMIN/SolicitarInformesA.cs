@@ -49,5 +49,11 @@ namespace CapaGUI.GUI_ADMIN
             MultaMes menumes = new MultaMes();
             menumes.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InformeUser menuuser = new InformeUser();
+            menuuser.ShowDialog();
+        }
     }
 }
