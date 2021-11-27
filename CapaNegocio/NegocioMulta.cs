@@ -41,16 +41,16 @@ namespace CapaNegocio
             Conec1.CadenaSQL = $@"SELECT Usuario.usuario AS 'Nombre Usuario',
 	                                Libro.titulo AS 'Libro',
                                     Multa.id_multa as 'ID',
-	                                CASE WHEN Prestamo.pendiente_pago = 0 THEN 'No'
-		                                 WHEN Prestamo.pendiente_pago = 1 THEN 'Si' END AS 'Pendiente Pago',
+	                                CASE WHEN Prestamo.pendiente_pago = 1 THEN 'Si' END AS 'Pendiente Pago',
 	                                Prestamo.fecha_prestamo AS 'Fecha Prestado',
 	                                Prestamo.fecha_devolucion AS 'Fecha Devolucion',
                                     CASE WHEN Prestamo.pendiente_pago = 1 THEN DATEDIFF(day, Prestamo.fecha_devolucion, GETDATE())
-                                         WHEN Prestamo.pendiente_pago = 0 THEN 0 END AS 'Dias Atraso'
+                                         END AS 'Dias Atraso'
 	                                FROM Usuario 
 	                                    JOIN Prestamo ON Usuario.id_cliente = Prestamo.id_cliente
 	                                    JOIN Libro ON Prestamo.id_libro = Libro.id_libro
 	                                    JOIN Multa ON Prestamo.id_multa = Multa.id_multa
+                                    WHERE Prestamo.pendiente_pago = 1
 	                                ORDER BY Prestamo.activo DESC";
             Conec1.EsSelect = true;
             Conec1.conectar();
