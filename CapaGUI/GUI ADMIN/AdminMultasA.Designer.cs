@@ -30,10 +30,10 @@ namespace CapaGUI.GUI_ADMIN
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridAdminMultas = new System.Windows.Forms.DataGridView();
             this.btnPagoMulta = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridAdminMultas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,17 +46,17 @@ namespace CapaGUI.GUI_ADMIN
             this.label1.TabIndex = 0;
             this.label1.Text = "Multas";
             // 
-            // dataGridView1
+            // GridAdminMultas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.GridAdminMultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridAdminMultas.Location = new System.Drawing.Point(13, 31);
+            this.GridAdminMultas.Name = "GridAdminMultas";
+            this.GridAdminMultas.Size = new System.Drawing.Size(402, 150);
+            this.GridAdminMultas.TabIndex = 1;
             // 
             // btnPagoMulta
             // 
-            this.btnPagoMulta.Location = new System.Drawing.Point(317, 51);
+            this.btnPagoMulta.Location = new System.Drawing.Point(454, 48);
             this.btnPagoMulta.Name = "btnPagoMulta";
             this.btnPagoMulta.Size = new System.Drawing.Size(93, 38);
             this.btnPagoMulta.TabIndex = 2;
@@ -65,7 +65,7 @@ namespace CapaGUI.GUI_ADMIN
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(317, 110);
+            this.btnSalir.Location = new System.Drawing.Point(454, 110);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 38);
             this.btnSalir.TabIndex = 3;
@@ -77,14 +77,15 @@ namespace CapaGUI.GUI_ADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 206);
+            this.ClientSize = new System.Drawing.Size(579, 206);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnPagoMulta);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridAdminMultas);
             this.Controls.Add(this.label1);
             this.Name = "AdminMultasA";
             this.Text = "Administrar Multas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.AdminMultasA_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridAdminMultas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,7 +94,7 @@ namespace CapaGUI.GUI_ADMIN
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridAdminMultas;
         private System.Windows.Forms.Button btnPagoMulta;
         private System.Windows.Forms.Button btnSalir;
     }

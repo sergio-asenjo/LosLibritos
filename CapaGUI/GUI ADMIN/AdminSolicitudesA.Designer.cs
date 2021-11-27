@@ -31,9 +31,10 @@ namespace CapaGUI.GUI_ADMIN
         {
             this.label1 = new System.Windows.Forms.Label();
             this.GridPrestamos = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFinalizarPrestamo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtPrueba = new System.Windows.Forms.TextBox();
+            this.txtIdAPagar = new System.Windows.Forms.TextBox();
+            this.lblIdMulta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,19 +60,19 @@ namespace CapaGUI.GUI_ADMIN
             this.GridPrestamos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPrestamos_CellClick);
             this.GridPrestamos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPrestamos_CellContentClick);
             // 
-            // button1
+            // btnFinalizarPrestamo
             // 
-            this.button1.Location = new System.Drawing.Point(627, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Finalizar Prestamo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFinalizarPrestamo.Location = new System.Drawing.Point(627, 62);
+            this.btnFinalizarPrestamo.Name = "btnFinalizarPrestamo";
+            this.btnFinalizarPrestamo.Size = new System.Drawing.Size(109, 34);
+            this.btnFinalizarPrestamo.TabIndex = 2;
+            this.btnFinalizarPrestamo.Text = "Finalizar Prestamo";
+            this.btnFinalizarPrestamo.UseVisualStyleBackColor = true;
+            this.btnFinalizarPrestamo.Click += new System.EventHandler(this.btnFinalizarPrestamo_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(627, 116);
+            this.btnSalir.Location = new System.Drawing.Point(627, 148);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(109, 34);
             this.btnSalir.TabIndex = 3;
@@ -79,21 +80,31 @@ namespace CapaGUI.GUI_ADMIN
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtPrueba
+            // txtIdAPagar
             // 
-            this.txtPrueba.Location = new System.Drawing.Point(636, 32);
-            this.txtPrueba.Name = "txtPrueba";
-            this.txtPrueba.Size = new System.Drawing.Size(100, 20);
-            this.txtPrueba.TabIndex = 4;
+            this.txtIdAPagar.Location = new System.Drawing.Point(659, 32);
+            this.txtIdAPagar.Name = "txtIdAPagar";
+            this.txtIdAPagar.Size = new System.Drawing.Size(77, 20);
+            this.txtIdAPagar.TabIndex = 4;
+            // 
+            // lblIdMulta
+            // 
+            this.lblIdMulta.AutoSize = true;
+            this.lblIdMulta.Location = new System.Drawing.Point(629, 35);
+            this.lblIdMulta.Name = "lblIdMulta";
+            this.lblIdMulta.Size = new System.Drawing.Size(24, 13);
+            this.lblIdMulta.TabIndex = 5;
+            this.lblIdMulta.Text = "ID: ";
             // 
             // AdminSolicitudesA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 199);
-            this.Controls.Add(this.txtPrueba);
+            this.Controls.Add(this.lblIdMulta);
+            this.Controls.Add(this.txtIdAPagar);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFinalizarPrestamo);
             this.Controls.Add(this.GridPrestamos);
             this.Controls.Add(this.label1);
             this.Name = "AdminSolicitudesA";
@@ -109,8 +120,9 @@ namespace CapaGUI.GUI_ADMIN
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView GridPrestamos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFinalizarPrestamo;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox txtPrueba;
+        private System.Windows.Forms.TextBox txtIdAPagar;
+        private System.Windows.Forms.Label lblIdMulta;
     }
 }

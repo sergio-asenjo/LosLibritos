@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN
@@ -12,9 +13,17 @@ namespace CapaGUI.GUI_ADMIN
             InitializeComponent();
         }
 
+        private void AdminMultasA_Load(object sender, EventArgs e)
+        {
+            var auxMulta = new NegocioMulta();
+            GridAdminMultas.DataSource = auxMulta.mostrarTodasMultas();
+            GridAdminMultas.DataMember = "Multa";
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Dispose();
+            GC.Collect();
         }
 
         protected override CreateParams CreateParams
@@ -26,5 +35,6 @@ namespace CapaGUI.GUI_ADMIN
                 return myCp;
             }
         }
+
     }
 }

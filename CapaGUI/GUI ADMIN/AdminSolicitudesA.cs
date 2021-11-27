@@ -32,7 +32,7 @@ namespace CapaGUI.GUI_ADMIN
             GridPrestamos.DataMember = "Prestamo";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFinalizarPrestamo_Click(object sender, EventArgs e)
         {
             NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
 
@@ -45,10 +45,10 @@ namespace CapaGUI.GUI_ADMIN
             {
                 NegocioLibro auxnegociolibro = new NegocioLibro();
 
-                auxnegocioprestamo.finalizarPrestamo(int.Parse(txtPrueba.Text));
+                auxnegocioprestamo.finalizarPrestamo(int.Parse(txtIdAPagar.Text));
                 auxnegociolibro.AgregarStock(Auxisbn);
                 MessageBox.Show("Prestamo Finalizado", "Mensaje de Sistema");
-                GridPrestamos.Update();
+                AdminSolicitudesA_Load(sender, e);
             }
             
         }
@@ -58,7 +58,7 @@ namespace CapaGUI.GUI_ADMIN
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.GridPrestamos.Rows[e.RowIndex];
-                txtPrueba.Text = row.Cells["ID"].Value.ToString();
+                txtIdAPagar.Text = row.Cells["ID"].Value.ToString();
                 Auxestadopago = row.Cells["Pendiente de Pago"].Value.ToString();
                 Auxisbn = row.Cells["ISBN"].Value.ToString();
             }
@@ -69,7 +69,7 @@ namespace CapaGUI.GUI_ADMIN
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.GridPrestamos.Rows[e.RowIndex];
-                txtPrueba.Text = row.Cells["ID"].Value.ToString();
+                txtIdAPagar.Text = row.Cells["ID"].Value.ToString();
                 Auxestadopago = row.Cells["Pendiente de Pago"].Value.ToString();
                 Auxisbn = row.Cells["ISBN"].Value.ToString();
             }
