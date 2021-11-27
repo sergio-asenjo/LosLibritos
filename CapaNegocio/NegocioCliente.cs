@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using System;
 using System.Data;
 
 namespace CapaNegocio
@@ -61,6 +62,35 @@ namespace CapaNegocio
             Conec1.EsSelect = true;
             Conec1.conectar();
             return Conec1.DbDataSet;
+        }
+
+        public void ActualizarPrestamosMultas(string rut)
+        {
+            ConfigurarConexion("Cliente");
+            Conec1.CadenaSQL = $"SELECT Usuario.id_cliente, Cliente.cantidad_prestados, Cliente.multa_vigente FROM {Conec1.NombreTabla} JOIN Usuario ON " +
+                               $"Cliente.id_cliente = Usuario.id_cliente WHERE Usuario.rut = '{rut}';";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            if (Conec1.DbDataSet.Tables[0].Rows.Count != 0)
+            {
+                int id_cliente = Convert.ToInt32(Conec1.DbDataSet.Tables[0].Rows[0]["id_cliente"].ToString());
+
+                Conec1.CadenaSQL = $"SELECT COUNT(activo) AS 'activos' FROM prestamo WHERE id_cliente = {id_cliente} AND activo = 1;";
+                Conec1.EsSelect = true;
+                Conec1.conectar();
+                int cantidad_prestados = Convert.ToInt32(Conec1.DbDataSet.Tables[0].Rows[0]["activos"].ToString());
+
+                Conec1.CadenaSQL = $"SELECT COUNT(*) as 'multa' FROM Prestamo JOIN Multa ON Prestamo.id_multa = Multa.id_multa WHERE Prestamo.id_cliente = {id_cliente} " +
+                                   $"AND Prestamo.id_multa IS NOT NULL AND Multa.pagada = 0;";
+                Conec1.EsSelect = true;
+                Conec1.conectar();
+                bool multa_activa = Convert.ToInt32(Conec1.DbDataSet.Tables[0].Rows[0]["multa"].ToString()) > 0 ? true : false;
+                int multa = multa_activa == true ? 1 : 0;
+
+                Conec1.CadenaSQL = $"UPDATE {Conec1.NombreTabla} SET cantidad_prestados = {cantidad_prestados}, multa_vigente = {multa} " +
+                                   $"WHERE id_cliente = {id_cliente};";
+                Conec1.conectar();
+            }
         }
     }
 }

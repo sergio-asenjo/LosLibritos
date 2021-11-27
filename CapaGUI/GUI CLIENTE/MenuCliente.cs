@@ -43,6 +43,8 @@ namespace CapaGUI
         private void MenuCliente_Load(object sender, EventArgs e)
         {
             var auxPrestamo = new NegocioPrestamo();
+            var auxCliente = new NegocioCliente();
+            auxCliente.ActualizarPrestamosMultas(Auxclientemenu.Rut);
             var dataSetPrestamos = auxPrestamo.VerificarEstadoPrestamos(Auxclientemenu.Rut);
             if (dataSetPrestamos != null)
             {
