@@ -22,7 +22,7 @@ namespace CapaGUI
             SolicitarLibrosC soli1 = new SolicitarLibrosC();
             soli1.Auxclienteprestamo = Auxclientemenu;
             soli1.ShowDialog();
-            
+            MenuCliente_Load(sender, e);
         }
 
         private void btnListar_Click(object sender, EventArgs e)

@@ -99,8 +99,7 @@ namespace CapaNegocio
 
             ConfigurarConexion("Prestamo");
             Conec1.CadenaSQL = $@"UPDATE {Conec1.NombreTabla}
-                                    SET pendiente_pago = 0,
-                                        activo = 0
+                                    SET pendiente_pago = 0
                                     WHERE id_multa = {id_multa};";
             Conec1.EsSelect = false;
             Conec1.conectar();

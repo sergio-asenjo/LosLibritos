@@ -1,5 +1,5 @@
 ﻿using CapaDTO;
-using System.Collections.Generic;
+using System;
 using System.Data;
 
 namespace CapaNegocio
@@ -61,6 +61,7 @@ namespace CapaNegocio
             Conec1.conectar();
             return Conec1.DbDataSet;
         }
+
         public void EliminarStock(string isbn)
         {
             ConfigurarConexion("libro");
@@ -68,12 +69,27 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
+
         public void AgregarStock(string isbn)
         {
             ConfigurarConexion("libro");
             Conec1.CadenaSQL = $"UPDATE libro set stock = stock +1 where isbn = '{isbn}';";
             Conec1.EsSelect = false;
             Conec1.conectar();
+        }
+
+        public int ConsultarStock(string isbn)
+        {
+            ConfigurarConexion("libro");
+            Conec1.CadenaSQL = $"SELECT stock FROM {Conec1.NombreTabla} WHERE isbn = '{isbn}';";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            var stockActual = -1;
+            if (Conec1.DbDataSet.Tables[0].Rows.Count != 0)
+            {
+                stockActual = Convert.ToInt32(Conec1.DbDataSet.Tables[0].Rows[0]["stock"].ToString());
+            }
+            return stockActual;
         }
     }
 }

@@ -36,18 +36,20 @@ namespace CapaGUI
                 else
                 {
                     NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
-                    
-                    auxnegocioprestamo.AnadirPrestamo(Auxclienteprestamo.Rut, txtBuscar.Text);
-
                     NegocioLibro auxnegociolibro = new NegocioLibro();
-
-                    auxnegociolibro.EliminarStock(txtBuscar.Text);
-
-                    MessageBox.Show("¡Libro Solicitado!", "Mensaje del Sistema.");
-
                     NegocioCliente auxCliente = new NegocioCliente();
-
-                    auxCliente.ActualizarPrestamosMultas(Auxclienteprestamo.Rut);
+                    
+                    if (auxnegociolibro.ConsultarStock(txtBuscar.Text) > 0)
+                    {
+                        auxnegocioprestamo.AnadirPrestamo(Auxclienteprestamo.Rut, txtBuscar.Text);
+                        auxnegociolibro.EliminarStock(txtBuscar.Text);
+                        MessageBox.Show("¡Libro Solicitado!", "Mensaje del Sistema.");
+                        auxCliente.ActualizarPrestamosMultas(Auxclienteprestamo.Rut);
+                    }
+                    else
+                    {
+                        MessageBox.Show("¡No hay stock de este libro!", "Mensaje del Sistema.");
+                    }
                 }
             }
             catch (Exception ex)
