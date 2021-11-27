@@ -58,6 +58,12 @@
     <Compile Include="GUI ADMIN\AdminMultasA.Designer.cs">
       <DependentUpon>AdminMultasA.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI ADMIN\AdminPagoMultasA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI ADMIN\AdminPagoMultasA.Designer.cs">
+      <DependentUpon>AdminPagoMultasA.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI ADMIN\AdminSolicitudesA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI ADMIN\AdminMultasA.resx">
       <DependentUpon>AdminMultasA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\AdminPagoMultasA.resx">
+      <DependentUpon>AdminPagoMultasA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI ADMIN\AdminSolicitudesA.resx">
       <DependentUpon>AdminSolicitudesA.cs</DependentUpon>
