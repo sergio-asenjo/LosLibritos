@@ -6,6 +6,8 @@ namespace CapaGUI
 {
     public partial class ListaryFC : Form
     {
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+
         public ListaryFC()
         {
             InitializeComponent();
@@ -53,6 +55,16 @@ namespace CapaGUI
         {
             Dispose();
             GC.Collect();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
     }
 }

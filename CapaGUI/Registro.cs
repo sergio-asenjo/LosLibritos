@@ -7,7 +7,8 @@ namespace CapaGUI
 {
     public partial class Registro : Form
     {
-        
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+
         public Registro()
         {
             InitializeComponent();
@@ -97,6 +98,16 @@ namespace CapaGUI
         {
             dateFechaNacimiento.Format = DateTimePickerFormat.Custom;
             dateFechaNacimiento.CustomFormat = "yyyy-MM-dd";
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
     }
 }
