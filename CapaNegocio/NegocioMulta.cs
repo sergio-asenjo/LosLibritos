@@ -104,6 +104,31 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
+
+        public void actualizarMultasImpagas()
+        {
+            ConfigurarConexion("Multa");
+            Conec1.CadenaSQL = $@"BEGIN
+	                                DECLARE @Id INT
+	                                DECLARE @FechaDevolucion DATE
+	                                DECLARE @IdMulta INT
+	                                WHILE EXISTS (SELECT id_prestamo, fecha_devolucion FROM Prestamo WHERE activo = 1 AND pendiente_pago = 0 AND(DATEDIFF(day, fecha_devolucion, GETDATE()) > 0))
+	                                BEGIN
+		                                SELECT TOP 1 @Id = id_prestamo, @FechaDevolucion = fecha_devolucion FROM Prestamo
+		                                WHERE activo = 1 AND (DATEDIFF(day, fecha_devolucion, GETDATE()) > 0);
+		
+		                                INSERT INTO Multa VALUES (DATEADD(day, +1, @FechaDevolucion), 0)
+		                                SELECT @IdMulta = @@IDENTITY;
+
+		                                UPDATE Prestamo
+			                                SET id_multa = @IdMulta,
+				                                pendiente_pago = 1
+			                                WHERE id_prestamo = @Id;
+	                                END
+                                END";
+            Conec1.EsSelect = false;
+            Conec1.conectar();
+        }
     }
 }
     

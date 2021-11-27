@@ -35,6 +35,7 @@ namespace CapaGUI.GUI_ADMIN
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblIdMulta = new System.Windows.Forms.Label();
             this.txtIdMulta = new System.Windows.Forms.TextBox();
+            this.btnProcesarMultas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridAdminMultas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,13 +55,13 @@ namespace CapaGUI.GUI_ADMIN
             this.GridAdminMultas.Location = new System.Drawing.Point(13, 31);
             this.GridAdminMultas.Name = "GridAdminMultas";
             this.GridAdminMultas.ReadOnly = true;
-            this.GridAdminMultas.Size = new System.Drawing.Size(402, 150);
+            this.GridAdminMultas.Size = new System.Drawing.Size(437, 187);
             this.GridAdminMultas.TabIndex = 1;
             this.GridAdminMultas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridAdminMultas_CellClick);
             // 
             // btnPagoMulta
             // 
-            this.btnPagoMulta.Location = new System.Drawing.Point(454, 62);
+            this.btnPagoMulta.Location = new System.Drawing.Point(478, 62);
             this.btnPagoMulta.Name = "btnPagoMulta";
             this.btnPagoMulta.Size = new System.Drawing.Size(93, 38);
             this.btnPagoMulta.TabIndex = 2;
@@ -70,7 +71,7 @@ namespace CapaGUI.GUI_ADMIN
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(454, 143);
+            this.btnSalir.Location = new System.Drawing.Point(478, 180);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 38);
             this.btnSalir.TabIndex = 3;
@@ -81,7 +82,7 @@ namespace CapaGUI.GUI_ADMIN
             // lblIdMulta
             // 
             this.lblIdMulta.AutoSize = true;
-            this.lblIdMulta.Location = new System.Drawing.Point(451, 39);
+            this.lblIdMulta.Location = new System.Drawing.Point(475, 39);
             this.lblIdMulta.Name = "lblIdMulta";
             this.lblIdMulta.Size = new System.Drawing.Size(21, 13);
             this.lblIdMulta.TabIndex = 4;
@@ -90,16 +91,27 @@ namespace CapaGUI.GUI_ADMIN
             // txtIdMulta
             // 
             this.txtIdMulta.Enabled = false;
-            this.txtIdMulta.Location = new System.Drawing.Point(478, 36);
+            this.txtIdMulta.Location = new System.Drawing.Point(502, 36);
             this.txtIdMulta.Name = "txtIdMulta";
             this.txtIdMulta.Size = new System.Drawing.Size(69, 20);
             this.txtIdMulta.TabIndex = 5;
+            // 
+            // btnProcesarMultas
+            // 
+            this.btnProcesarMultas.Location = new System.Drawing.Point(478, 124);
+            this.btnProcesarMultas.Name = "btnProcesarMultas";
+            this.btnProcesarMultas.Size = new System.Drawing.Size(93, 29);
+            this.btnProcesarMultas.TabIndex = 6;
+            this.btnProcesarMultas.Text = "Procesar Multas";
+            this.btnProcesarMultas.UseVisualStyleBackColor = true;
+            this.btnProcesarMultas.Click += new System.EventHandler(this.btnProcesarMultas_Click);
             // 
             // AdminMultasA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 206);
+            this.ClientSize = new System.Drawing.Size(598, 244);
+            this.Controls.Add(this.btnProcesarMultas);
             this.Controls.Add(this.txtIdMulta);
             this.Controls.Add(this.lblIdMulta);
             this.Controls.Add(this.btnSalir);
@@ -123,5 +135,6 @@ namespace CapaGUI.GUI_ADMIN
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblIdMulta;
         private System.Windows.Forms.TextBox txtIdMulta;
+        private System.Windows.Forms.Button btnProcesarMultas;
     }
 }

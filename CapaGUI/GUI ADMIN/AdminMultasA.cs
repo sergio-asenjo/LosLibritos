@@ -74,5 +74,21 @@ namespace CapaGUI.GUI_ADMIN
                 }
             }
         }
+
+        private void btnProcesarMultas_Click(object sender, EventArgs e)
+        {
+            var auxMulta = new NegocioMulta();
+            try
+            {
+                auxMulta.actualizarMultasImpagas();
+                AdminMultasA_Load(sender, e);
+                MessageBox.Show("Multas procesadas correctamente.", "Mensaje del Sistema.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error al intentar procesar las multas. \n" + ex, "Mensaje del Sistame.");
+            }
+
+        }
     }
 }
