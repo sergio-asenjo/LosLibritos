@@ -56,7 +56,7 @@ namespace CapaGUI
             this.GridMultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridMultas.Location = new System.Drawing.Point(12, 38);
             this.GridMultas.Name = "GridMultas";
-            this.GridMultas.Size = new System.Drawing.Size(507, 150);
+            this.GridMultas.Size = new System.Drawing.Size(442, 150);
             this.GridMultas.TabIndex = 0;
             // 
             // label1

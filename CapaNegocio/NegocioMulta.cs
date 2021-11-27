@@ -14,6 +14,27 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
+
+        public DataSet mostrarTodasMultasCliente(string rut)
+        {
+            ConfigurarConexion("Multa");
+            Conec1.CadenaSQL = $@"SELECT 
+    	                            Libro.titulo as 'Titulo',
+	                                CASE WHEN Multa.pagada = 0 THEN 'Pendiente Pago'
+		                                 WHEN Multa.pagada = 1 THEN 'Pagada' END as 'Estado',
+	                                Prestamo.fecha_prestamo as 'Fecha Prestado',
+	                                Prestamo.fecha_devolucion as 'Fecha Devolucion'
+	                                FROM Usuario
+		                            JOIN Prestamo ON Usuario.id_cliente = Prestamo.id_cliente
+		                            JOIN Libro ON Prestamo.id_libro = Libro.id_libro
+		                            JOIN Multa ON Prestamo.id_multa = Multa.id_multa
+		                            WHERE Usuario.rut = '{rut}'
+		                            ORDER BY Multa.pagada ASC;";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
         public DataSet mostrarMultaCliente(string id_multa)
         {
             ConfigurarConexion("Multa");
@@ -22,6 +43,7 @@ namespace CapaNegocio
             Conec1.conectar();
             return Conec1.DbDataSet;
         }
+
         public DataSet mostrarMultaSemana()
         {
             ConfigurarConexion("Multa");

@@ -19,10 +19,14 @@ namespace CapaGUI
 
         private void AdminUsuarioC_Load(object sender, EventArgs e)
         {
-            NegocioPrestamo auxprestamo = new NegocioPrestamo();
+            NegocioPrestamo auxPrestamo = new NegocioPrestamo();
+            NegocioMulta auxMulta = new NegocioMulta();
 
-            this.GridPrestamos.DataSource = auxprestamo.mostrarPrestamos(auxclienteadmin.Rut);
+            this.GridPrestamos.DataSource = auxPrestamo.mostrarPrestamos(Auxclienteadmin.Rut);
             this.GridPrestamos.DataMember = "Prestamo";
+
+            this.GridMultas.DataSource = auxMulta.mostrarTodasMultasCliente(Auxclienteadmin.Rut);
+            this.GridMultas.DataMember = "Multa";
 
             txtNombre.Text = Auxclienteadmin.Nombre;
             txtDireccion.Text = Auxclienteadmin.Direccion;
