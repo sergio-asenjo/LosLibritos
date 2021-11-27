@@ -55,5 +55,11 @@ namespace CapaGUI.GUI_ADMIN
             InformeUser menuuser = new InformeUser();
             menuuser.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InformePrestamos menuprestamos = new InformePrestamos();
+            menuprestamos.ShowDialog();
+        }
     }
 }

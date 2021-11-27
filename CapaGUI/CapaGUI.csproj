@@ -64,6 +64,12 @@
     <Compile Include="GUI ADMIN\AdminSolicitudesA.Designer.cs">
       <DependentUpon>AdminSolicitudesA.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI ADMIN\GUI INFORMES\InformePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI ADMIN\GUI INFORMES\InformePrestamos.Designer.cs">
+      <DependentUpon>InformePrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI ADMIN\GUI INFORMES\InformeUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI ADMIN\AdminSolicitudesA.resx">
       <DependentUpon>AdminSolicitudesA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI ADMIN\GUI INFORMES\InformePrestamos.resx">
+      <DependentUpon>InformePrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI ADMIN\GUI INFORMES\InformeUser.resx">
       <DependentUpon>InformeUser.cs</DependentUpon>

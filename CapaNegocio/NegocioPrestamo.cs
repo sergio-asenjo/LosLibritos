@@ -42,6 +42,19 @@ namespace CapaNegocio
             return Conec1.DbDataSet;
         }
 
+        public DataSet mostrarPrestamosTotal()
+        {
+            ConfigurarConexion("Prestamo");
+            Conec1.CadenaSQL = $"SELECT us.nombre + ' ' +  us.apellido_paterno + ' ' + us.apellido_materno,li.isbn as ISBN , li.titulo as Titulo, mu.fecha_prestamo as 'Fecha Prestamo', mu.fecha_devolucion as 'Fecha Devolucion', mu.id_prestamo as 'ID', " +
+                               $"CASE WHEN mu.activo = 1 THEN 'Activo' WHEN mu.activo = 0 THEN 'Pagado' END as 'Estado Solicitud'," +
+                               $"CASE WHEN mu.pendiente_pago = 1 THEN 'Falta Pago' WHEN mu.pendiente_pago = 0 THEN 'No' END as 'Pendiente de Pago' " +
+                               $"FROM Prestamo mu JOIN Usuario us ON mu.id_cliente = us.id_cliente " +
+                               $"JOIN Libro li ON mu.id_libro = li.id_libro;";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            return Conec1.DbDataSet;
+        }
+
         public void finalizarPrestamo(int id)
         {
             ConfigurarConexion("Prestamo");
