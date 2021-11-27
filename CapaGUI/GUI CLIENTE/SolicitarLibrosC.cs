@@ -23,7 +23,15 @@ namespace CapaGUI
             {
                 if (txtBuscar.Text.Length == 0)
                 {
-                    MessageBox.Show("ISBN no puede estar vacio", "Error de Sistema");
+                    MessageBox.Show("ISBN no puede estar vacio.", "Error del Sistema.");
+                }
+                else if (Auxclienteprestamo.Multa_vigente)
+                {
+                    MessageBox.Show("¡No puede solicitar libros si tiene multa vigente!", "Error del Sistema.");
+                }
+                else if (Auxclienteprestamo.Cant_prestamos >= 3)
+                {
+                    MessageBox.Show("¡No puede solicitar más de 3 libros al mismo tiempo!", "Error del Sistema.");
                 }
                 else
                 {
@@ -35,13 +43,16 @@ namespace CapaGUI
 
                     auxnegociolibro.EliminarStock(txtBuscar.Text);
 
-                    MessageBox.Show("Libro Solicitado!", "Mensaje de Sistema");
-                    
+                    MessageBox.Show("¡Libro Solicitado!", "Mensaje del Sistema.");
+
+                    NegocioCliente auxCliente = new NegocioCliente();
+
+                    auxCliente.ActualizarPrestamosMultas(Auxclienteprestamo.Rut);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema" + ex.Message, "Error de Sistema");
+                MessageBox.Show("Error de sistema: " + ex.Message, "Error del Sistema.");
                
             }
         }
