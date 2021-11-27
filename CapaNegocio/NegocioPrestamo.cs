@@ -62,5 +62,23 @@ namespace CapaNegocio
             Conec1.EsSelect = false;
             Conec1.conectar();
         }
+
+        public DataSet VerificarEstadoPrestamos(string rut)
+        {
+            ConfigurarConexion("Cliente");
+            Conec1.CadenaSQL = $"SELECT Cliente.cantidad_prestados, Cliente.multa_vigente FROM {Conec1.NombreTabla} JOIN Usuario ON " +
+                               $"Cliente.id_cliente = Usuario.id_cliente WHERE Usuario.rut = '{rut}';";
+            Conec1.EsSelect = true;
+            Conec1.conectar();
+            DataSet ds = Conec1.DbDataSet;
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return ds;
+            }
+        }
     }
 }

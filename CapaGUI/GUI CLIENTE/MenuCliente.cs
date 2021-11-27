@@ -1,4 +1,5 @@
 ﻿using CapaDTO;
+using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -41,7 +42,16 @@ namespace CapaGUI
 
         private void MenuCliente_Load(object sender, EventArgs e)
         {
+            var auxPrestamo = new NegocioPrestamo();
+            var dataSetPrestamos = auxPrestamo.VerificarEstadoPrestamos(Auxclientemenu.Rut);
+            if (dataSetPrestamos != null)
+            {
+                Auxclientemenu.Cant_prestamos = Convert.ToInt32(dataSetPrestamos.Tables[0].Rows[0]["cantidad_prestados"].ToString());
+                Auxclientemenu.Multa_vigente =  (bool) dataSetPrestamos.Tables[0].Rows[0]["multa_vigente"];
+            }
             lblUsuarioLogged.Text = Auxclientemenu.Username;
+            lblMultaActiva.Text = Auxclientemenu.Multa_vigente ? "Multa Pendiente" : "Sin Multa Pendiente.";
+            lblPrestamosActivos.Text = Auxclientemenu.Cant_prestamos.ToString();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
