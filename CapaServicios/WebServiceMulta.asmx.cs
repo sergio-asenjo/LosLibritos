@@ -57,10 +57,10 @@ namespace CapaServicios
         }
 
         [WebMethod]
-        public void webPagarMulta(int id_multa)
+        public void webPagarMulta(Multa multa)
         {
             NegocioMulta auxnegociomulta = new NegocioMulta();
-            auxnegociomulta.pagarMulta(id_multa);
+            auxnegociomulta.pagarMulta(multa);
         }
 
         [WebMethod]

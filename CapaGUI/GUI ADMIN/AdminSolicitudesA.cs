@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN
@@ -34,7 +33,7 @@ namespace CapaGUI.GUI_ADMIN
 
         private void btnFinalizarPrestamo_Click(object sender, EventArgs e)
         {
-            ServicePrestamo.WebServicePrestamoSoapClient auxnegocioprestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
+            ServicePrestamo.WebServicePrestamoSoapClient auxServicePrestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
 
 
             if (Auxestadopago == "Falta Pago")
@@ -43,10 +42,10 @@ namespace CapaGUI.GUI_ADMIN
             }
             else
             {
-                NegocioLibro auxnegociolibro = new NegocioLibro();
+                ServiceLibro.WebServiceLibroSoapClient auxServiceLirbo = new ServiceLibro.WebServiceLibroSoapClient();
 
-                auxnegocioprestamo.webFinalizarPrestamo(int.Parse(txtIdAPagar.Text));
-                auxnegociolibro.AgregarStock(Auxisbn);
+                auxServicePrestamo.webFinalizarPrestamo(int.Parse(txtIdAPagar.Text));
+                auxServiceLirbo.webAgregarStock(Auxisbn);
                 MessageBox.Show("Prestamo Finalizado", "Mensaje de Sistema");
                 AdminSolicitudesA_Load(sender, e);
             }

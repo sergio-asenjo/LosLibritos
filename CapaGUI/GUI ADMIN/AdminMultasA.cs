@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN
@@ -42,7 +41,7 @@ namespace CapaGUI.GUI_ADMIN
         {
             if (txtIdMulta.Text != "Pagada" && txtIdMulta.Text != "")
             {
-                var auxMulta = new Multa();
+                ServiceMulta.Multa auxMulta = new ServiceMulta.Multa();
                 auxMulta.Id_multa = Convert.ToInt32(txtIdMulta.Text);
                 auxMulta.Dias_atraso = Dias_atraso;
 

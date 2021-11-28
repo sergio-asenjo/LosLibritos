@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN
@@ -8,7 +7,7 @@ namespace CapaGUI.GUI_ADMIN
     {
         private const int CP_NOCLOSE_BUTTON = 0x200;
 
-        public Multa AuxMulta { get; set; }
+        public ServiceMulta.Multa AuxMulta { get; set; }
 
         public AdminPagoMultasA()
         {
@@ -40,10 +39,10 @@ namespace CapaGUI.GUI_ADMIN
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            var auxNegocioMulta = new ServiceMulta.WebServiceMultaSoapClient();
+            ServiceMulta.WebServiceMultaSoapClient auxNegocioMulta = new ServiceMulta.WebServiceMultaSoapClient();
             try
             {
-                auxNegocioMulta.webPagarMulta(AuxMulta.Id_multa);
+                auxNegocioMulta.webPagarMulta(AuxMulta);
                 MessageBox.Show("¡Multa pagada!", "Mensaje del Sistema.");
                 Dispose();
                 GC.Collect();

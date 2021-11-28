@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using CapaDTO;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -88,19 +89,19 @@ namespace CapaNegocio
             return Conec1.DbDataSet;
         }
 
-        public void pagarMulta(int id_multa)
+        public void pagarMulta(Multa multa)
         {
             ConfigurarConexion("Multa");
             Conec1.CadenaSQL = $@"UPDATE {Conec1.NombreTabla}
                                     SET pagada = 1
-                                    WHERE id_multa = {id_multa};";
+                                    WHERE id_multa = {multa.Id_multa};";
             Conec1.EsSelect = false;
             Conec1.conectar();
 
             ConfigurarConexion("Prestamo");
             Conec1.CadenaSQL = $@"UPDATE {Conec1.NombreTabla}
                                     SET pendiente_pago = 0
-                                    WHERE id_multa = {id_multa};";
+                                    WHERE id_multa = {multa.Id_multa};";
             Conec1.EsSelect = false;
             Conec1.conectar();
         }

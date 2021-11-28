@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN.GUI_INFORMES

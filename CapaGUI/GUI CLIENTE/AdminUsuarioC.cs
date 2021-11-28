@@ -1,6 +1,4 @@
-﻿using CapaDTO;
-using CapaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI
