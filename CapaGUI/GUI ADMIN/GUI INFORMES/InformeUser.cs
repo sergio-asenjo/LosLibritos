@@ -1,12 +1,4 @@
-﻿using CapaNegocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN.GUI_INFORMES
@@ -20,15 +12,15 @@ namespace CapaGUI.GUI_ADMIN.GUI_INFORMES
 
         private void InformeUser_Load(object sender, EventArgs e)
         {
-            NegocioCliente auxnegociousuario = new NegocioCliente();
-            GridCliente.DataSource = auxnegociousuario.mostrarTodosClientes();
+            ServiceCliente.WebServiceClienteSoapClient auxnegociousuario = new ServiceCliente.WebServiceClienteSoapClient();
+            GridCliente.DataSource = auxnegociousuario.webMostrarTodosClientes();
             GridCliente.DataMember = "Usuario";
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            NegocioCliente auxnegociousuario = new NegocioCliente();
-            GridCliente.DataSource = auxnegociousuario.mostrarClienteFiltro(txtFiltro.Text);
+            ServiceCliente.WebServiceClienteSoapClient auxnegociousuario = new ServiceCliente.WebServiceClienteSoapClient();
+            GridCliente.DataSource = auxnegociousuario.webMostrarClienteFiltro(txtFiltro.Text);
             GridCliente.DataMember = "Usuario";
         }
 

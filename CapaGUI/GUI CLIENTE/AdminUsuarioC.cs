@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using CapaNegocio;
+﻿using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -7,8 +6,8 @@ namespace CapaGUI
 {
     public partial class AdminUsuarioC : Form
     {
-        private Cliente auxclienteadmin;
-        public Cliente Auxclienteadmin { get => auxclienteadmin; set => auxclienteadmin = value; }
+        private ServiceCliente.Cliente auxclienteadmin;
+        public ServiceCliente.Cliente Auxclienteadmin { get => auxclienteadmin; set => auxclienteadmin = value; }
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
 
@@ -19,10 +18,10 @@ namespace CapaGUI
 
         private void AdminUsuarioC_Load(object sender, EventArgs e)
         {
-            NegocioPrestamo auxPrestamo = new NegocioPrestamo();
+            ServicePrestamo.WebServicePrestamoSoapClient auxPrestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
             NegocioMulta auxMulta = new NegocioMulta();
 
-            this.GridPrestamos.DataSource = auxPrestamo.mostrarPrestamos(Auxclienteadmin.Rut);
+            this.GridPrestamos.DataSource = auxPrestamo.webMostrarPrestamos(Auxclienteadmin.Rut);
             this.GridPrestamos.DataMember = "Prestamo";
 
             this.GridMultas.DataSource = auxMulta.mostrarTodasMultasCliente(Auxclienteadmin.Rut);

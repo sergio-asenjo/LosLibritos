@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webAnadirPrestamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webAnadirPrestamoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarPrestamos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarPrestamosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarPrestamosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarPrestamosGeneral">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarPrestamosGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarPrestamosGeneralResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarPrestamosTotal">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarPrestamosTotalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarPrestamosTotalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFinalizarPrestamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFinalizarPrestamoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webVerificarEstadoPrestamos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webVerificarEstadoPrestamosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webVerificarEstadoPrestamosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webAnadirPrestamoSoapIn">
+    <wsdl:part name="parameters" element="tns:webAnadirPrestamo" />
+  </wsdl:message>
+  <wsdl:message name="webAnadirPrestamoSoapOut">
+    <wsdl:part name="parameters" element="tns:webAnadirPrestamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarPrestamosSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarPrestamos" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarPrestamosSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarPrestamosResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarPrestamosGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarPrestamosGeneral" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarPrestamosGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarPrestamosGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarPrestamosTotalSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarPrestamosTotal" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarPrestamosTotalSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarPrestamosTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="webFinalizarPrestamoSoapIn">
+    <wsdl:part name="parameters" element="tns:webFinalizarPrestamo" />
+  </wsdl:message>
+  <wsdl:message name="webFinalizarPrestamoSoapOut">
+    <wsdl:part name="parameters" element="tns:webFinalizarPrestamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="webVerificarEstadoPrestamosSoapIn">
+    <wsdl:part name="parameters" element="tns:webVerificarEstadoPrestamos" />
+  </wsdl:message>
+  <wsdl:message name="webVerificarEstadoPrestamosSoapOut">
+    <wsdl:part name="parameters" element="tns:webVerificarEstadoPrestamosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicePrestamoSoap">
+    <wsdl:operation name="webAnadirPrestamo">
+      <wsdl:input message="tns:webAnadirPrestamoSoapIn" />
+      <wsdl:output message="tns:webAnadirPrestamoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamos">
+      <wsdl:input message="tns:webMostrarPrestamosSoapIn" />
+      <wsdl:output message="tns:webMostrarPrestamosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamosGeneral">
+      <wsdl:input message="tns:webMostrarPrestamosGeneralSoapIn" />
+      <wsdl:output message="tns:webMostrarPrestamosGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamosTotal">
+      <wsdl:input message="tns:webMostrarPrestamosTotalSoapIn" />
+      <wsdl:output message="tns:webMostrarPrestamosTotalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webFinalizarPrestamo">
+      <wsdl:input message="tns:webFinalizarPrestamoSoapIn" />
+      <wsdl:output message="tns:webFinalizarPrestamoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webVerificarEstadoPrestamos">
+      <wsdl:input message="tns:webVerificarEstadoPrestamosSoapIn" />
+      <wsdl:output message="tns:webVerificarEstadoPrestamosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServicePrestamoSoap" type="tns:WebServicePrestamoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirPrestamo">
+      <soap:operation soapAction="http://tempuri.org/webAnadirPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamos">
+      <soap:operation soapAction="http://tempuri.org/webMostrarPrestamos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamosGeneral">
+      <soap:operation soapAction="http://tempuri.org/webMostrarPrestamosGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamosTotal">
+      <soap:operation soapAction="http://tempuri.org/webMostrarPrestamosTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFinalizarPrestamo">
+      <soap:operation soapAction="http://tempuri.org/webFinalizarPrestamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webVerificarEstadoPrestamos">
+      <soap:operation soapAction="http://tempuri.org/webVerificarEstadoPrestamos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServicePrestamoSoap12" type="tns:WebServicePrestamoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirPrestamo">
+      <soap12:operation soapAction="http://tempuri.org/webAnadirPrestamo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamos">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarPrestamos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamosGeneral">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarPrestamosGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarPrestamosTotal">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarPrestamosTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFinalizarPrestamo">
+      <soap12:operation soapAction="http://tempuri.org/webFinalizarPrestamo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webVerificarEstadoPrestamos">
+      <soap12:operation soapAction="http://tempuri.org/webVerificarEstadoPrestamos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServicePrestamo">
+    <wsdl:port name="WebServicePrestamoSoap" binding="tns:WebServicePrestamoSoap">
+      <soap:address location="https://localhost:44325/WebServicePrestamo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServicePrestamoSoap12" binding="tns:WebServicePrestamoSoap12">
+      <soap12:address location="https://localhost:44325/WebServicePrestamo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

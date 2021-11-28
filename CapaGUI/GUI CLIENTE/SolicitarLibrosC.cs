@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using CapaNegocio;
+﻿using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -8,14 +7,14 @@ namespace CapaGUI
     public partial class SolicitarLibrosC : Form
     {
         private const int CP_NOCLOSE_BUTTON = 0x200;
-        private Cliente auxclienteprestamo;
+        private ServiceCliente.Cliente auxclienteprestamo;
         
         public SolicitarLibrosC()
         {
             InitializeComponent();
         }
 
-        public Cliente Auxclienteprestamo { get => auxclienteprestamo; set => auxclienteprestamo = value; }
+        public ServiceCliente.Cliente Auxclienteprestamo { get => auxclienteprestamo; set => auxclienteprestamo = value; }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,16 +34,16 @@ namespace CapaGUI
                 }
                 else
                 {
-                    NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
+                    ServicePrestamo.WebServicePrestamoSoapClient auxnegocioprestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
                     NegocioLibro auxnegociolibro = new NegocioLibro();
-                    NegocioCliente auxCliente = new NegocioCliente();
+                    ServiceCliente.WebServiceClienteSoapClient auxCliente = new ServiceCliente.WebServiceClienteSoapClient();
                     
                     if (auxnegociolibro.ConsultarStock(txtBuscar.Text) > 0)
                     {
-                        auxnegocioprestamo.AnadirPrestamo(Auxclienteprestamo.Rut, txtBuscar.Text);
+                        auxnegocioprestamo.webAnadirPrestamo(Auxclienteprestamo.Rut, txtBuscar.Text);
                         auxnegociolibro.EliminarStock(txtBuscar.Text);
                         MessageBox.Show("¡Libro Solicitado!", "Mensaje del Sistema.");
-                        auxCliente.ActualizarPrestamosMultas(Auxclienteprestamo.Rut);
+                        auxCliente.webActualizarPrestamosMultas(Auxclienteprestamo.Rut);
                     }
                     else
                     {

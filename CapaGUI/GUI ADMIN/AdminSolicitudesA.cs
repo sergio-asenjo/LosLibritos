@@ -26,15 +26,15 @@ namespace CapaGUI.GUI_ADMIN
 
         private void AdminSolicitudesA_Load(object sender, EventArgs e)
         {
-            NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
+            ServicePrestamo.WebServicePrestamoSoapClient auxnegocioprestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
 
-            GridPrestamos.DataSource = auxnegocioprestamo.mostrarPrestamosGeneral();
+            GridPrestamos.DataSource = auxnegocioprestamo.webMostrarPrestamosGeneral();
             GridPrestamos.DataMember = "Prestamo";
         }
 
         private void btnFinalizarPrestamo_Click(object sender, EventArgs e)
         {
-            NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
+            ServicePrestamo.WebServicePrestamoSoapClient auxnegocioprestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
 
 
             if (Auxestadopago == "Falta Pago")
@@ -45,7 +45,7 @@ namespace CapaGUI.GUI_ADMIN
             {
                 NegocioLibro auxnegociolibro = new NegocioLibro();
 
-                auxnegocioprestamo.finalizarPrestamo(int.Parse(txtIdAPagar.Text));
+                auxnegocioprestamo.webFinalizarPrestamo(int.Parse(txtIdAPagar.Text));
                 auxnegociolibro.AgregarStock(Auxisbn);
                 MessageBox.Show("Prestamo Finalizado", "Mensaje de Sistema");
                 AdminSolicitudesA_Load(sender, e);

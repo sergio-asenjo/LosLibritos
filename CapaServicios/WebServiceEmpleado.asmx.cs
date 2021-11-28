@@ -1,4 +1,6 @@
-﻿using System.Web.Services;
+﻿using CapaDTO;
+using CapaNegocio;
+using System.Web.Services;
 
 namespace CapaServicios
 {
@@ -12,9 +14,10 @@ namespace CapaServicios
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void webAnadirEmpleado(Empleado empleado)
         {
-            return "Hello World";
+            NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+            auxEmpleado.AnadirEmpleado(empleado);
         }
     }
 }

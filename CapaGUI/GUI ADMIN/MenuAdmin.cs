@@ -1,5 +1,4 @@
 ﻿using CapaGUI.GUI_ADMIN;
-using CapaDTO;
 using System;
 using System.Windows.Forms;
 
@@ -9,7 +8,7 @@ namespace CapaGUI
     {
         private const int CP_NOCLOSE_BUTTON = 0x200;
 
-        public Empleado AuxEmpleado { get; set; }
+        public ServiceEmpleado.Empleado AuxEmpleado { get; set; }
 
         public MenuAdmin()
         {

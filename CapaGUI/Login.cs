@@ -1,6 +1,4 @@
-﻿using CapaDTO;
-using CapaNegocio;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -24,9 +22,9 @@ namespace CapaGUI
         {
             try
             {
-                NegocioCliente auxNegocioCliente = new NegocioCliente();
+                ServiceCliente.WebServiceClienteSoapClient auxNegocioCliente = new ServiceCliente.WebServiceClienteSoapClient();
 
-                DataSet usuario = auxNegocioCliente.iniciarSesionCliente(txtUsuario.Text);
+                DataSet usuario = auxNegocioCliente.webIniciarSesionCliente(txtUsuario.Text);
                 string id = usuario.Tables[0].Rows[0]["id_empleado"].ToString();
 
                 if (usuario.Tables[0].Rows[0]["usuario"].ToString() == txtUsuario.Text
@@ -35,7 +33,7 @@ namespace CapaGUI
                 {
                     MenuAdmin menu2 = new MenuAdmin();
 
-                    var auxEmpleado = new Empleado
+                    ServiceEmpleado.Empleado auxEmpleado = new ServiceEmpleado.Empleado
                     {
                         Nombre = usuario.Tables[0].Rows[0]["nombre"].ToString(),
                         Apaterno = usuario.Tables[0].Rows[0]["apellido_paterno"].ToString(),
@@ -65,7 +63,7 @@ namespace CapaGUI
                 {
                     MenuCliente menu1 = new MenuCliente();
 
-                    Cliente auxcliente = new Cliente
+                    ServiceCliente.Cliente auxcliente = new ServiceCliente.Cliente
                     {
                         Nombre = usuario.Tables[0].Rows[0]["nombre"].ToString(),
                         Apaterno = usuario.Tables[0].Rows[0]["apellido_paterno"].ToString(),

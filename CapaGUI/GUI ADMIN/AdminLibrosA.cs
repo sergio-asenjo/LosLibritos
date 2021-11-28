@@ -74,7 +74,7 @@ namespace CapaGUI.GUI_ADMIN
             AgregarCategoria cate1 = new AgregarCategoria();
 
             cate1.ShowDialog();
-
+            AdminLibrosA_Load(sender, e);
         }
 
         private void btnAutor_Click(object sender, EventArgs e)
@@ -93,12 +93,12 @@ namespace CapaGUI.GUI_ADMIN
 
         private void AdminLibrosA_Load(object sender, EventArgs e)
         {
-            var auxAutor = new ServiceAutor.WebServiceAutorSoapClient();
-            var auxCategoria = new NegocioCategoria();
+            ServiceAutor.WebServiceAutorSoapClient auxAutor = new ServiceAutor.WebServiceAutorSoapClient();
+            ServiceCategoria.WebServiceCategoriaSoapClient auxCategoria = new ServiceCategoria.WebServiceCategoriaSoapClient();
             comboAutor.Text = "Selecciona Autor";
             comboCategoria.Text = "Selecciona Categoria";
             DataSet listadoAutores = auxAutor.webMostrarListadoAutor();
-            DataSet listadoCategorias = auxCategoria.mostrarListadoCategoria();
+            DataSet listadoCategorias = auxCategoria.webMostrarListadoCategoria();
 
             comboAutor.Items.Clear();
             comboCategoria.Items.Clear();

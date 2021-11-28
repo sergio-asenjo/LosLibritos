@@ -1,4 +1,7 @@
-﻿using System.Web.Services;
+﻿using CapaDTO;
+using CapaNegocio;
+using System.Data;
+using System.Web.Services;
 
 namespace CapaServicios
 {
@@ -12,9 +15,45 @@ namespace CapaServicios
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public void webAnadirCliente(Cliente cliente)
         {
-            return "Hello World";
+            NegocioCliente auxCliente = new NegocioCliente();
+            auxCliente.AnadirCliente(cliente);
+        }
+
+        [WebMethod]
+        public DataSet webMostrarDatosCliente(string rut)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.mostrarDatosCliente(rut);
+        }
+
+        [WebMethod]
+        public DataSet webIniciarSesionCliente(string usuario)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.iniciarSesionCliente(usuario);
+        }
+
+        [WebMethod]
+        public DataSet webMostrarTodosClientes()
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.mostrarTodosClientes();
+        }
+
+        [WebMethod]
+        public DataSet webMostrarClienteFiltro(string filtro)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.mostrarClienteFiltro(filtro);
+        }
+
+        [WebMethod]
+        public void webActualizarPrestamosMultas(string rut)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            auxCliente.ActualizarPrestamosMultas(rut);
         }
     }
 }

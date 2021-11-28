@@ -1,6 +1,4 @@
-﻿using CapaDTO;
-using CapaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI
@@ -61,7 +59,7 @@ namespace CapaGUI
                 else
                 {
                     
-                    Cliente auxcliente = new Cliente();
+                    ServiceCliente.Cliente auxcliente = new ServiceCliente.Cliente();
 
                     auxcliente.Nombre = txtNombre.Text;
                     auxcliente.Apaterno = txtAPaterno.Text;
@@ -78,8 +76,8 @@ namespace CapaGUI
                     auxcliente.Multa_vigente = false;
                     auxcliente.Miembro = true;
 
-                    NegocioCliente auxNegocioCliente = new NegocioCliente();
-                    auxNegocioCliente.AnadirCliente(auxcliente);
+                    ServiceCliente.WebServiceClienteSoapClient auxServicioCliente = new ServiceCliente.WebServiceClienteSoapClient();
+                    auxServicioCliente.webAnadirCliente(auxcliente);
 
                     MessageBox.Show("Usuario Registrado", "Confirmacion de Sistema");
 

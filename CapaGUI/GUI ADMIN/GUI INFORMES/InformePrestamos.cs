@@ -1,12 +1,4 @@
-﻿using CapaNegocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN.GUI_INFORMES
@@ -20,9 +12,9 @@ namespace CapaGUI.GUI_ADMIN.GUI_INFORMES
 
         private void InformePrestamos_Load(object sender, EventArgs e)
         {
-            NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
+            ServicePrestamo.WebServicePrestamoSoapClient auxnegocioprestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
             
-            dataGridView1.DataSource = auxnegocioprestamo.mostrarPrestamosTotal();
+            dataGridView1.DataSource = auxnegocioprestamo.webMostrarPrestamosTotal();
             dataGridView1.DataMember = "Prestamo";
 
         }

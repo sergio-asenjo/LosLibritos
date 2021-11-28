@@ -1,16 +1,14 @@
-﻿using CapaDTO;
-using CapaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI
 {
     public partial class MenuCliente : Form
     {
-        private Cliente auxclientemenu;
+        private ServiceCliente.Cliente auxclientemenu;
         private const int CP_NOCLOSE_BUTTON = 0x200;
 
-        public Cliente Auxclientemenu { get => auxclientemenu; set => auxclientemenu = value; }
+        public ServiceCliente.Cliente Auxclientemenu { get => auxclientemenu; set => auxclientemenu = value; }
 
         public MenuCliente()
         {
@@ -42,10 +40,10 @@ namespace CapaGUI
 
         private void MenuCliente_Load(object sender, EventArgs e)
         {
-            var auxPrestamo = new NegocioPrestamo();
-            var auxCliente = new NegocioCliente();
-            auxCliente.ActualizarPrestamosMultas(Auxclientemenu.Rut);
-            var dataSetPrestamos = auxPrestamo.VerificarEstadoPrestamos(Auxclientemenu.Rut);
+            ServicePrestamo.WebServicePrestamoSoapClient auxPrestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
+            ServiceCliente.WebServiceClienteSoapClient auxCliente = new ServiceCliente.WebServiceClienteSoapClient();
+            auxCliente.webActualizarPrestamosMultas(Auxclientemenu.Rut);
+            var dataSetPrestamos = auxPrestamo.webVerificarEstadoPrestamos(Auxclientemenu.Rut);
             if (dataSetPrestamos != null)
             {
                 Auxclientemenu.Cant_prestamos = Convert.ToInt32(dataSetPrestamos.Tables[0].Rows[0]["cantidad_prestados"].ToString());
