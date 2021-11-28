@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webAnadirMulta">
+        <s:complexType />
+      </s:element>
+      <s:element name="webAnadirMultaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webmostrarTodasMultasCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webmostrarTodasMultasClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webmostrarTodasMultasClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarTodasMultas">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarTodasMultasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarTodasMultasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarMultaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_multa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarMultaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarMultaClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarMultaSemana">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarMultaSemanaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarMultaSemanaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webMostrarMultaMes">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarMultaMesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarMultaMesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPagarMulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_multa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webPagarMultaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webActualizarMultasImpagas">
+        <s:complexType />
+      </s:element>
+      <s:element name="webActualizarMultasImpagasResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webAnadirMultaSoapIn">
+    <wsdl:part name="parameters" element="tns:webAnadirMulta" />
+  </wsdl:message>
+  <wsdl:message name="webAnadirMultaSoapOut">
+    <wsdl:part name="parameters" element="tns:webAnadirMultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webmostrarTodasMultasClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:webmostrarTodasMultasCliente" />
+  </wsdl:message>
+  <wsdl:message name="webmostrarTodasMultasClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:webmostrarTodasMultasClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarTodasMultasSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarTodasMultas" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarTodasMultasSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarTodasMultasResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarMultaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarMultaCliente" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarMultaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarMultaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarMultaSemanaSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarMultaSemana" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarMultaSemanaSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarMultaSemanaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarMultaMesSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarMultaMes" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarMultaMesSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarMultaMesResponse" />
+  </wsdl:message>
+  <wsdl:message name="webPagarMultaSoapIn">
+    <wsdl:part name="parameters" element="tns:webPagarMulta" />
+  </wsdl:message>
+  <wsdl:message name="webPagarMultaSoapOut">
+    <wsdl:part name="parameters" element="tns:webPagarMultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarMultasImpagasSoapIn">
+    <wsdl:part name="parameters" element="tns:webActualizarMultasImpagas" />
+  </wsdl:message>
+  <wsdl:message name="webActualizarMultasImpagasSoapOut">
+    <wsdl:part name="parameters" element="tns:webActualizarMultasImpagasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMultaSoap">
+    <wsdl:operation name="webAnadirMulta">
+      <wsdl:input message="tns:webAnadirMultaSoapIn" />
+      <wsdl:output message="tns:webAnadirMultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webmostrarTodasMultasCliente">
+      <wsdl:input message="tns:webmostrarTodasMultasClienteSoapIn" />
+      <wsdl:output message="tns:webmostrarTodasMultasClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarTodasMultas">
+      <wsdl:input message="tns:webMostrarTodasMultasSoapIn" />
+      <wsdl:output message="tns:webMostrarTodasMultasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaCliente">
+      <wsdl:input message="tns:webMostrarMultaClienteSoapIn" />
+      <wsdl:output message="tns:webMostrarMultaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaSemana">
+      <wsdl:input message="tns:webMostrarMultaSemanaSoapIn" />
+      <wsdl:output message="tns:webMostrarMultaSemanaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaMes">
+      <wsdl:input message="tns:webMostrarMultaMesSoapIn" />
+      <wsdl:output message="tns:webMostrarMultaMesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webPagarMulta">
+      <wsdl:input message="tns:webPagarMultaSoapIn" />
+      <wsdl:output message="tns:webPagarMultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarMultasImpagas">
+      <wsdl:input message="tns:webActualizarMultasImpagasSoapIn" />
+      <wsdl:output message="tns:webActualizarMultasImpagasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMultaSoap" type="tns:WebServiceMultaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirMulta">
+      <soap:operation soapAction="http://tempuri.org/webAnadirMulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webmostrarTodasMultasCliente">
+      <soap:operation soapAction="http://tempuri.org/webmostrarTodasMultasCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarTodasMultas">
+      <soap:operation soapAction="http://tempuri.org/webMostrarTodasMultas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaCliente">
+      <soap:operation soapAction="http://tempuri.org/webMostrarMultaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaSemana">
+      <soap:operation soapAction="http://tempuri.org/webMostrarMultaSemana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaMes">
+      <soap:operation soapAction="http://tempuri.org/webMostrarMultaMes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPagarMulta">
+      <soap:operation soapAction="http://tempuri.org/webPagarMulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarMultasImpagas">
+      <soap:operation soapAction="http://tempuri.org/webActualizarMultasImpagas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMultaSoap12" type="tns:WebServiceMultaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirMulta">
+      <soap12:operation soapAction="http://tempuri.org/webAnadirMulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webmostrarTodasMultasCliente">
+      <soap12:operation soapAction="http://tempuri.org/webmostrarTodasMultasCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarTodasMultas">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarTodasMultas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaCliente">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarMultaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaSemana">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarMultaSemana" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarMultaMes">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarMultaMes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webPagarMulta">
+      <soap12:operation soapAction="http://tempuri.org/webPagarMulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webActualizarMultasImpagas">
+      <soap12:operation soapAction="http://tempuri.org/webActualizarMultasImpagas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMulta">
+    <wsdl:port name="WebServiceMultaSoap" binding="tns:WebServiceMultaSoap">
+      <soap:address location="https://localhost:44325/WebServiceMulta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMultaSoap12" binding="tns:WebServiceMultaSoap12">
+      <soap12:address location="https://localhost:44325/WebServiceMulta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

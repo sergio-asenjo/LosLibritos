@@ -13,8 +13,8 @@ namespace CapaGUI.GUI_ADMIN.GUI_INFORMES
 
         private void MultaMes_Load(object sender, EventArgs e)
         {
-            NegocioMulta negocioMulta = new NegocioMulta();
-            gridMulta.DataSource = negocioMulta.mostrarMultaMes();
+            ServiceMulta.WebServiceMultaSoapClient auxServiceMulta = new ServiceMulta.WebServiceMultaSoapClient();
+            gridMulta.DataSource = auxServiceMulta.webMostrarMultaMes();
             gridMulta.DataMember = "Multa";
         }
 

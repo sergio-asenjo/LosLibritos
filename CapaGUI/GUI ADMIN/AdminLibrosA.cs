@@ -1,6 +1,4 @@
-﻿using CapaDTO;
-using CapaGUI.GUI_ADMIN.GUI_LIBROS;
-using CapaNegocio;
+﻿using CapaGUI.GUI_ADMIN.GUI_LIBROS;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -46,7 +44,8 @@ namespace CapaGUI.GUI_ADMIN
                 }
                 else
                 {
-                    Libro auxLibro = new Libro();
+                    ServiceLibro.Libro auxLibro = new ServiceLibro.Libro(); 
+                    
 
                     auxLibro.Isbn = txtISBN.Text;
                     auxLibro.Titulo = txtTitulo.Text;
@@ -57,9 +56,10 @@ namespace CapaGUI.GUI_ADMIN
                     auxLibro.Nombre_autor = comboAutor.Text;
                     auxLibro.Nombre_categoria = comboCategoria.Text;
 
-                    NegocioLibro auxNegocioLibro = new NegocioLibro();
+                    ServiceLibro.WebServiceLibroSoapClient auxNegocioLibro = new ServiceLibro.WebServiceLibroSoapClient();
+                    
 
-                    auxNegocioLibro.AnadirLibro(auxLibro);
+                    auxNegocioLibro.webAnadirLibro(auxLibro);
                     MessageBox.Show("Libro Guardado", "Mensaje de Sistema");
                 }
             }

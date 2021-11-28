@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI
@@ -18,21 +17,21 @@ namespace CapaGUI
             try
             {
                 string busqueda = txtBusqueda.Text;
-                var nLibro = new NegocioLibro();
+                var nLibro = new ServiceLibro.WebServiceLibroSoapClient();
 
                 if (rdoTitulo.Checked)
                 {
-                    gridLibros.DataSource = nLibro.FiltrarTitulo(busqueda);
+                    gridLibros.DataSource = nLibro.webFiltrarTitulo(busqueda);
                     gridLibros.DataMember = "Libro";
                 }
                 else if (rdoAutor.Checked)
                 {
-                    gridLibros.DataSource = nLibro.FiltrarAutor(busqueda);
+                    gridLibros.DataSource = nLibro.webFiltrarAutor(busqueda);
                     gridLibros.DataMember = "Libro";
                 }
                 else if (rdoCategoria.Checked)
                 {
-                    gridLibros.DataSource = nLibro.FiltrarCategoria(busqueda);
+                    gridLibros.DataSource = nLibro.webFiltrarCategoria(busqueda);
                     gridLibros.DataMember = "Libro";
                 }
 
@@ -46,8 +45,8 @@ namespace CapaGUI
 
         private void ListaryFC_Load(object sender, EventArgs e)
         {
-            NegocioLibro auxNegocioLibro = new NegocioLibro();
-            this.gridLibros.DataSource = auxNegocioLibro.mostrarLibros();
+            ServiceLibro.WebServiceLibroSoapClient auxServiceLibro = new ServiceLibro.WebServiceLibroSoapClient();
+            this.gridLibros.DataSource = auxServiceLibro.webMostrarLibros();
             this.gridLibros.DataMember = "Libro";
         }
 

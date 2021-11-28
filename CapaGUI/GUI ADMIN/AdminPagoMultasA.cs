@@ -1,5 +1,4 @@
 ﻿using CapaDTO;
-using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -41,10 +40,10 @@ namespace CapaGUI.GUI_ADMIN
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            var auxNegocioMulta = new NegocioMulta();
+            var auxNegocioMulta = new ServiceMulta.WebServiceMultaSoapClient();
             try
             {
-                auxNegocioMulta.pagarMulta(AuxMulta.Id_multa);
+                auxNegocioMulta.webPagarMulta(AuxMulta.Id_multa);
                 MessageBox.Show("¡Multa pagada!", "Mensaje del Sistema.");
                 Dispose();
                 GC.Collect();

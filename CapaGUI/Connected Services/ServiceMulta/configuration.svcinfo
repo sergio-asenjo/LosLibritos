@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;WebServiceMultaSoap&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="WebServiceMultaSoap" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;WebServiceMultaSoap1&quot; /&gt;" bindingType="basicHttpBinding" name="WebServiceMultaSoap1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://localhost:44325/WebServiceMulta.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;WebServiceMultaSoap&quot; contract=&quot;ServiceMulta.WebServiceMultaSoap&quot; name=&quot;WebServiceMultaSoap&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://localhost:44325/WebServiceMulta.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;WebServiceMultaSoap&quot; contract=&quot;ServiceMulta.WebServiceMultaSoap&quot; name=&quot;WebServiceMultaSoap&quot; /&gt;" contractName="ServiceMulta.WebServiceMultaSoap" name="WebServiceMultaSoap" />
+  </endpoints>
+</configurationSnapshot>

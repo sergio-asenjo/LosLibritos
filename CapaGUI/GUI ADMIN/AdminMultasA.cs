@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using CapaDTO;
+﻿using CapaDTO;
 using System;
 using System.Windows.Forms;
 
@@ -18,8 +17,8 @@ namespace CapaGUI.GUI_ADMIN
 
         private void AdminMultasA_Load(object sender, EventArgs e)
         {
-            var auxMulta = new NegocioMulta();
-            GridAdminMultas.DataSource = auxMulta.mostrarTodasMultas();
+            var auxMulta = new ServiceMulta.WebServiceMultaSoapClient();
+            GridAdminMultas.DataSource = auxMulta.webMostrarTodasMultas();
             GridAdminMultas.DataMember = "Multa";
         }
 
@@ -77,10 +76,10 @@ namespace CapaGUI.GUI_ADMIN
 
         private void btnProcesarMultas_Click(object sender, EventArgs e)
         {
-            var auxMulta = new NegocioMulta();
+            var auxMulta = new ServiceMulta.WebServiceMultaSoapClient();
             try
             {
-                auxMulta.actualizarMultasImpagas();
+                auxMulta.webActualizarMultasImpagas();
                 AdminMultasA_Load(sender, e);
                 MessageBox.Show("Multas procesadas correctamente.", "Mensaje del Sistema.");
             }

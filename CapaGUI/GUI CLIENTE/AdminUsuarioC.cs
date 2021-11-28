@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaDTO;
+using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -18,13 +19,13 @@ namespace CapaGUI
 
         private void AdminUsuarioC_Load(object sender, EventArgs e)
         {
+            ServiceMulta.WebServiceMultaSoapClient auxServiceMulta = new ServiceMulta.WebServiceMultaSoapClient();
             ServicePrestamo.WebServicePrestamoSoapClient auxPrestamo = new ServicePrestamo.WebServicePrestamoSoapClient();
-            NegocioMulta auxMulta = new NegocioMulta();
 
             this.GridPrestamos.DataSource = auxPrestamo.webMostrarPrestamos(Auxclienteadmin.Rut);
             this.GridPrestamos.DataMember = "Prestamo";
 
-            this.GridMultas.DataSource = auxMulta.mostrarTodasMultasCliente(Auxclienteadmin.Rut);
+            this.GridMultas.DataSource = auxServiceMulta.webmostrarTodasMultasCliente(Auxclienteadmin.Rut);
             this.GridMultas.DataMember = "Multa";
 
             txtNombre.Text = Auxclienteadmin.Nombre;
