@@ -1,5 +1,4 @@
 ﻿using CapaDTO;
-using CapaNegocio;
 using System;
 using System.Windows.Forms;
 
@@ -35,14 +34,15 @@ namespace CapaGUI
                 }
                 else
                 {
+
                     NegocioPrestamo auxnegocioprestamo = new NegocioPrestamo();
-                    NegocioLibro auxnegociolibro = new NegocioLibro();
+                    ServiceLibro.WebServiceLibroSoapClient auxServiceLibro = new ServiceLibro.WebServiceLibroSoapClient();
                     NegocioCliente auxCliente = new NegocioCliente();
                     
                     if (auxnegociolibro.ConsultarStock(txtBuscar.Text) > 0)
                     {
                         auxnegocioprestamo.AnadirPrestamo(Auxclienteprestamo.Rut, txtBuscar.Text);
-                        auxnegociolibro.EliminarStock(txtBuscar.Text);
+                        auxServiceLibro.webEliminarStock(txtBuscar.Text);
                         MessageBox.Show("¡Libro Solicitado!", "Mensaje del Sistema.");
                         auxCliente.ActualizarPrestamosMultas(Auxclienteprestamo.Rut);
                     }

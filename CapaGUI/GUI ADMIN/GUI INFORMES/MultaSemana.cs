@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +19,8 @@ namespace CapaGUI.GUI_CLIENTE.GUI_INFORMES
 
         private void MultaSemana_Load(object sender, EventArgs e)
         {
-            NegocioMulta negocioMulta = new NegocioMulta();
-            gridMulta.DataSource = negocioMulta.mostrarMultaSemana();
+            ServiceMulta.WebServiceMultaSoapClient auxServiceMulta = new ServiceMulta.WebServiceMultaSoapClient();
+            gridMulta.DataSource = auxServiceMulta.webMostrarMultaSemana();
             gridMulta.DataMember = "Multa";
         }
 

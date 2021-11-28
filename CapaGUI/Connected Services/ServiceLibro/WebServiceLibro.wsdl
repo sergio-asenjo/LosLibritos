@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webAnadirLibro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="libro" type="tns:Libro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Libro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id_libro" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Edicion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Idioma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Isbn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stock" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_autor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_categoria" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="webAnadirLibroResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarLibros">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarLibrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarLibrosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFiltrarTitulo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="titulo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFiltrarTituloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webFiltrarTituloResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFiltrarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFiltrarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webFiltrarCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFiltrarAutor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webFiltrarAutorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webFiltrarAutorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webEliminarStockResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webAgregarStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webAgregarStockResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webConsultarStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webConsultarStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="webConsultarStockResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webAnadirLibroSoapIn">
+    <wsdl:part name="parameters" element="tns:webAnadirLibro" />
+  </wsdl:message>
+  <wsdl:message name="webAnadirLibroSoapOut">
+    <wsdl:part name="parameters" element="tns:webAnadirLibroResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarLibrosSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarLibros" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarLibrosSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarLibrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="webFiltrarTituloSoapIn">
+    <wsdl:part name="parameters" element="tns:webFiltrarTitulo" />
+  </wsdl:message>
+  <wsdl:message name="webFiltrarTituloSoapOut">
+    <wsdl:part name="parameters" element="tns:webFiltrarTituloResponse" />
+  </wsdl:message>
+  <wsdl:message name="webFiltrarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:webFiltrarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="webFiltrarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:webFiltrarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="webFiltrarAutorSoapIn">
+    <wsdl:part name="parameters" element="tns:webFiltrarAutor" />
+  </wsdl:message>
+  <wsdl:message name="webFiltrarAutorSoapOut">
+    <wsdl:part name="parameters" element="tns:webFiltrarAutorResponse" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarStockSoapIn">
+    <wsdl:part name="parameters" element="tns:webEliminarStock" />
+  </wsdl:message>
+  <wsdl:message name="webEliminarStockSoapOut">
+    <wsdl:part name="parameters" element="tns:webEliminarStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="webAgregarStockSoapIn">
+    <wsdl:part name="parameters" element="tns:webAgregarStock" />
+  </wsdl:message>
+  <wsdl:message name="webAgregarStockSoapOut">
+    <wsdl:part name="parameters" element="tns:webAgregarStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="webConsultarStockSoapIn">
+    <wsdl:part name="parameters" element="tns:webConsultarStock" />
+  </wsdl:message>
+  <wsdl:message name="webConsultarStockSoapOut">
+    <wsdl:part name="parameters" element="tns:webConsultarStockResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceLibroSoap">
+    <wsdl:operation name="webAnadirLibro">
+      <wsdl:input message="tns:webAnadirLibroSoapIn" />
+      <wsdl:output message="tns:webAnadirLibroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarLibros">
+      <wsdl:input message="tns:webMostrarLibrosSoapIn" />
+      <wsdl:output message="tns:webMostrarLibrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarTitulo">
+      <wsdl:input message="tns:webFiltrarTituloSoapIn" />
+      <wsdl:output message="tns:webFiltrarTituloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarCategoria">
+      <wsdl:input message="tns:webFiltrarCategoriaSoapIn" />
+      <wsdl:output message="tns:webFiltrarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarAutor">
+      <wsdl:input message="tns:webFiltrarAutorSoapIn" />
+      <wsdl:output message="tns:webFiltrarAutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarStock">
+      <wsdl:input message="tns:webEliminarStockSoapIn" />
+      <wsdl:output message="tns:webEliminarStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarStock">
+      <wsdl:input message="tns:webAgregarStockSoapIn" />
+      <wsdl:output message="tns:webAgregarStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webConsultarStock">
+      <wsdl:input message="tns:webConsultarStockSoapIn" />
+      <wsdl:output message="tns:webConsultarStockSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceLibroSoap" type="tns:WebServiceLibroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirLibro">
+      <soap:operation soapAction="http://tempuri.org/webAnadirLibro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarLibros">
+      <soap:operation soapAction="http://tempuri.org/webMostrarLibros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarTitulo">
+      <soap:operation soapAction="http://tempuri.org/webFiltrarTitulo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarCategoria">
+      <soap:operation soapAction="http://tempuri.org/webFiltrarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarAutor">
+      <soap:operation soapAction="http://tempuri.org/webFiltrarAutor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarStock">
+      <soap:operation soapAction="http://tempuri.org/webEliminarStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarStock">
+      <soap:operation soapAction="http://tempuri.org/webAgregarStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultarStock">
+      <soap:operation soapAction="http://tempuri.org/webConsultarStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceLibroSoap12" type="tns:WebServiceLibroSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirLibro">
+      <soap12:operation soapAction="http://tempuri.org/webAnadirLibro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarLibros">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarLibros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarTitulo">
+      <soap12:operation soapAction="http://tempuri.org/webFiltrarTitulo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/webFiltrarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webFiltrarAutor">
+      <soap12:operation soapAction="http://tempuri.org/webFiltrarAutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webEliminarStock">
+      <soap12:operation soapAction="http://tempuri.org/webEliminarStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webAgregarStock">
+      <soap12:operation soapAction="http://tempuri.org/webAgregarStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webConsultarStock">
+      <soap12:operation soapAction="http://tempuri.org/webConsultarStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceLibro">
+    <wsdl:port name="WebServiceLibroSoap" binding="tns:WebServiceLibroSoap">
+      <soap:address location="https://localhost:44325/WebServiceLibro.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceLibroSoap12" binding="tns:WebServiceLibroSoap12">
+      <soap12:address location="https://localhost:44325/WebServiceLibro.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
