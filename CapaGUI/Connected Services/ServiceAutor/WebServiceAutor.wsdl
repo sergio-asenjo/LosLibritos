@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webAnadirAutor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autor" type="tns:Autor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Autor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id_autor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="webAnadirAutorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarListadoAutor">
+        <s:complexType />
+      </s:element>
+      <s:element name="webMostrarListadoAutorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webMostrarListadoAutorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webAnadirAutorSoapIn">
+    <wsdl:part name="parameters" element="tns:webAnadirAutor" />
+  </wsdl:message>
+  <wsdl:message name="webAnadirAutorSoapOut">
+    <wsdl:part name="parameters" element="tns:webAnadirAutorResponse" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarListadoAutorSoapIn">
+    <wsdl:part name="parameters" element="tns:webMostrarListadoAutor" />
+  </wsdl:message>
+  <wsdl:message name="webMostrarListadoAutorSoapOut">
+    <wsdl:part name="parameters" element="tns:webMostrarListadoAutorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceAutorSoap">
+    <wsdl:operation name="webAnadirAutor">
+      <wsdl:input message="tns:webAnadirAutorSoapIn" />
+      <wsdl:output message="tns:webAnadirAutorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarListadoAutor">
+      <wsdl:input message="tns:webMostrarListadoAutorSoapIn" />
+      <wsdl:output message="tns:webMostrarListadoAutorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceAutorSoap" type="tns:WebServiceAutorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirAutor">
+      <soap:operation soapAction="http://tempuri.org/webAnadirAutor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarListadoAutor">
+      <soap:operation soapAction="http://tempuri.org/webMostrarListadoAutor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceAutorSoap12" type="tns:WebServiceAutorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webAnadirAutor">
+      <soap12:operation soapAction="http://tempuri.org/webAnadirAutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webMostrarListadoAutor">
+      <soap12:operation soapAction="http://tempuri.org/webMostrarListadoAutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceAutor">
+    <wsdl:port name="WebServiceAutorSoap" binding="tns:WebServiceAutorSoap">
+      <soap:address location="https://localhost:44325/WebServiceAutor.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceAutorSoap12" binding="tns:WebServiceAutorSoap12">
+      <soap12:address location="https://localhost:44325/WebServiceAutor.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

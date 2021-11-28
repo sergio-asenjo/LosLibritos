@@ -1,13 +1,4 @@
-﻿using CapaNegocio;
-using CapaDTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CapaGUI.GUI_ADMIN.GUI_LIBROS
@@ -25,22 +16,17 @@ namespace CapaGUI.GUI_ADMIN.GUI_LIBROS
             {
                 if (txtAutor.TextLength == 0)
                 {
-                    MessageBox.Show("Autor Vacio", "Error de Sistema");
+                    MessageBox.Show("¡Autor Vacio", "Error de Sistema.");
                 }
                 else
                 {
-                    Autor auxAutor = new Autor();
+                    ServiceAutor.WebServiceAutorSoapClient auxServiceAutor = new ServiceAutor.WebServiceAutorSoapClient();
+                    ServiceAutor.Autor auxAutor = new ServiceAutor.Autor();
+                    
                     auxAutor.Nombre = txtAutor.Text;
+                    auxServiceAutor.webAnadirAutor(auxAutor);
 
-                    NegocioAutor auxNegocioAutor = new NegocioAutor();
-                    auxNegocioAutor.AnadirAutor(auxAutor);
-
-                    MessageBox.Show("Autor Agregado!", "Confirmacion de Sistema");
-
-                    AdminLibrosA auxmenu = new AdminLibrosA(); 
-
-                    auxmenu.Refresh();
-
+                    MessageBox.Show("¡Autor Agregado!", "Confirmación de Sistema.");
                 }
             }
             catch(Exception ex)

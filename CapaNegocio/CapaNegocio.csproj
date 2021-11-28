@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{40EA3C32-3341-418F-980E-DEAF032B5435}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CapaNegocio</RootNamespace>
     <AssemblyName>CapaNegocio</AssemblyName>
@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainNegocio.cs" />
     <Compile Include="Negocio.cs" />
     <Compile Include="NegocioAutor.cs" />
     <Compile Include="NegocioCategoria.cs" />

@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDTO", "CapaDTO\CapaDTO.csproj", "{6915BBF9-0B67-4EEF-A855-A209F2204350}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaGUI", "CapaGUI\CapaGUI.csproj", "{8A036959-698F-42DA-BC49-2A34947E48AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1CD1AB2D-E6C2-4FE4-9FE9-39192F4D964B} = {1CD1AB2D-E6C2-4FE4-9FE9-39192F4D964B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{40EA3C32-3341-418F-980E-DEAF032B5435}"
 EndProject
