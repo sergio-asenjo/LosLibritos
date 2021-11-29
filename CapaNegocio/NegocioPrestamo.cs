@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using System.Data;
+﻿using System.Data;
 
 namespace CapaNegocio
 {
