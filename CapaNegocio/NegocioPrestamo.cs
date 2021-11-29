@@ -21,7 +21,7 @@ namespace CapaNegocio
         {
             ConfigurarConexion("Prestamo");
             Conec1.CadenaSQL = $"SELECT li.titulo as Titulo, mu.fecha_prestamo as 'Fecha Prestamo', mu.fecha_devolucion as 'Fecha Devolucion'," +
-                               $"CASE WHEN mu.activo = 1 THEN 'Activo' WHEN mu.activo = 0 THEN 'Pagado' END as 'Estado Solicitud'," +
+                               $"CASE WHEN mu.activo = 1 THEN 'Activo' WHEN mu.activo = 0 THEN 'Devuelto' END as 'Estado Solicitud'," +
                                $"CASE WHEN mu.pendiente_pago = 1 THEN 'Falta Pago' WHEN mu.pendiente_pago = 0 THEN 'No' END as 'Pendiente de Pago '" +
                                $"FROM Prestamo mu JOIN Usuario us ON mu.id_cliente = us.id_cliente " +
                                $"JOIN Libro li ON mu.id_libro = li.id_libro WHERE us.rut = '{rut}';";
