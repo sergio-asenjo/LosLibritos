@@ -281,16 +281,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
-      <Project>{6915BBF9-0B67-4EEF-A855-A209F2204350}</Project>
-      <Name>CapaDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{40ea3c32-3341-418f-980e-deaf032b5435}</Project>
-      <Name>CapaNegocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
