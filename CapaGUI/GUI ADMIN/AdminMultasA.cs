@@ -45,6 +45,27 @@ namespace CapaGUI.GUI_ADMIN
                 auxMulta.Id_multa = Convert.ToInt32(txtIdMulta.Text);
                 auxMulta.Dias_atraso = Dias_atraso;
 
+                if (auxMulta.Dias_atraso > 0 && auxMulta.Dias_atraso < 4)
+                {
+                    auxMulta.Monto_pago = 1000;
+                }
+                else if (auxMulta.Dias_atraso >= 4 && auxMulta.Dias_atraso < 8)
+                {
+                    auxMulta.Monto_pago = 2000;
+                }
+                else if (auxMulta.Dias_atraso >= 8 && auxMulta.Dias_atraso < 12)
+                {
+                    auxMulta.Monto_pago = 3000;
+                }
+                else if (auxMulta.Dias_atraso >= 12 && auxMulta.Dias_atraso < 16)
+                {
+                    auxMulta.Monto_pago = 4000;
+                }
+                else if (auxMulta.Dias_atraso >= 16)
+                {
+                    auxMulta.Monto_pago = 5000;
+                }
+
                 var auxPagoMultas = new AdminPagoMultasA();
                 auxPagoMultas.AuxMulta = auxMulta;
                 auxPagoMultas.ShowDialog();
